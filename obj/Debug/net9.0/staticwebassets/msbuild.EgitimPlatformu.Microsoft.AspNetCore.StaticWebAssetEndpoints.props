@@ -1,16 +1,16 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/css/site.88jak8vlt9.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"88jak8vlt9"},{"Name":"integrity","Value":"sha256-KJyz2PzYiKjxtVKiQJVUEy54WTOgDV4iUklDD9DWOJc="},{"Name":"label","Value":"_content/EgitimPlatformu/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"9383"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022KJyz2PzYiKjxtVKiQJVUEy54WTOgDV4iUklDD9DWOJc=\u0022"},{"Name":"Last-Modified","Value":"Mon, 28 Apr 2025 16:49:49 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-KJyz2PzYiKjxtVKiQJVUEy54WTOgDV4iUklDD9DWOJc="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"9383"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022KJyz2PzYiKjxtVKiQJVUEy54WTOgDV4iUklDD9DWOJc=\u0022"},{"Name":"Last-Modified","Value":"Mon, 28 Apr 2025 16:49:49 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-aGG1\u002BfBEZYCYYM\u002BRXpNQqkMvYqD\u002Bki4SfFxFnzSjD0U="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"6149"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022aGG1\u002BfBEZYCYYM\u002BRXpNQqkMvYqD\u002Bki4SfFxFnzSjD0U=\u0022"},{"Name":"Last-Modified","Value":"Mon, 28 Apr 2025 17:06:59 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/css/site.sncmh16ga1.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"sncmh16ga1"},{"Name":"integrity","Value":"sha256-aGG1\u002BfBEZYCYYM\u002BRXpNQqkMvYqD\u002Bki4SfFxFnzSjD0U="},{"Name":"label","Value":"_content/EgitimPlatformu/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6149"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022aGG1\u002BfBEZYCYYM\u002BRXpNQqkMvYqD\u002Bki4SfFxFnzSjD0U=\u0022"},{"Name":"Last-Modified","Value":"Mon, 28 Apr 2025 17:06:59 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/EgitimPlatformu.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\EgitimPlatformu.vnpbyqlzo1.bundle.scp.css'))</AssetFile>
