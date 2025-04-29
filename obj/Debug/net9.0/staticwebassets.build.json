@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TA1wHkIDOsqKpTz50hfukElGaggECGDr0Dgw2u0NaEk=",
+  "Hash": "gyaOhQVhN/v9JLnihjurI1g8YiDO81HnF49sBafWOcA=",
   "Source": "EgitimPlatformu",
   "BasePath": "_content/EgitimPlatformu",
   "Mode": "Default",
@@ -1256,12 +1256,12 @@
       "OriginalItemSpec": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\obj\\Debug\\net9.0\\compressed\\wb4wr7yuz8-5yfp3vitfp.gz",
+      "Identity": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\obj\\Debug\\net9.0\\compressed\\wb4wr7yuz8-gb129s2ux5.gz",
       "SourceId": "EgitimPlatformu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/EgitimPlatformu",
-      "RelativePath": "css/site#[.{fingerprint=5yfp3vitfp}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=gb129s2ux5}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -1270,8 +1270,8 @@
       "RelatedAsset": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "sn45v2faxp",
-      "Integrity": "KCI3WLG38BXmJcFEDdbuyGICgqLGjkBEIgKzL/+rrFs=",
+      "Fingerprint": "la7aztw1o3",
+      "Integrity": "k+VOsnBtB+D/ICJpQ4TZJAXck/7DQJYqWHPqDEZjfkk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\css\\site.css"
@@ -1417,8 +1417,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "5yfp3vitfp",
-      "Integrity": "/Tt4TKhMo54VA3b+FuCTGElcz+yImZWyPzbXLpl0bzQ=",
+      "Fingerprint": "gb129s2ux5",
+      "Integrity": "1FPfcWMcIfGTbGM35gqDykNTBO8/gB8qSCOOpFcxAJk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -2749,13 +2749,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.5yfp3vitfp.css",
-      "AssetFile": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\obj\\Debug\\net9.0\\compressed\\wb4wr7yuz8-5yfp3vitfp.gz",
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\obj\\Debug\\net9.0\\compressed\\wb4wr7yuz8-gb129s2ux5.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000207125104"
+          "Quality": "0.000225123818"
         }
       ],
       "ResponseHeaders": [
@@ -2765,19 +2765,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4827"
+          "Value": "4441"
         },
         {
           "Name": "ETag",
-          "Value": "\"KCI3WLG38BXmJcFEDdbuyGICgqLGjkBEIgKzL/+rrFs=\""
+          "Value": "\"k+VOsnBtB+D/ICJpQ4TZJAXck/7DQJYqWHPqDEZjfkk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 10:58:46 GMT"
+          "Value": "Tue, 29 Apr 2025 11:09:45 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -2793,26 +2793,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"/Tt4TKhMo54VA3b+FuCTGElcz+yImZWyPzbXLpl0bzQ=\""
+          "Value": "W/\"1FPfcWMcIfGTbGM35gqDykNTBO8/gB8qSCOOpFcxAJk=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "5yfp3vitfp"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-/Tt4TKhMo54VA3b+FuCTGElcz+yImZWyPzbXLpl0bzQ="
+          "Value": "sha256-1FPfcWMcIfGTbGM35gqDykNTBO8/gB8qSCOOpFcxAJk="
         }
       ]
     },
     {
-      "Route": "css/site.5yfp3vitfp.css",
+      "Route": "css/site.css",
       "AssetFile": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2822,7 +2814,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "26943"
+          "Value": "23708"
         },
         {
           "Name": "Content-Type",
@@ -2830,11 +2822,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/Tt4TKhMo54VA3b+FuCTGElcz+yImZWyPzbXLpl0bzQ=\""
+          "Value": "\"1FPfcWMcIfGTbGM35gqDykNTBO8/gB8qSCOOpFcxAJk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 10:58:46 GMT"
+          "Value": "Tue, 29 Apr 2025 11:09:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1FPfcWMcIfGTbGM35gqDykNTBO8/gB8qSCOOpFcxAJk="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css.gz",
+      "AssetFile": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\obj\\Debug\\net9.0\\compressed\\wb4wr7yuz8-gb129s2ux5.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4441"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"k+VOsnBtB+D/ICJpQ4TZJAXck/7DQJYqWHPqDEZjfkk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 11:09:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-k+VOsnBtB+D/ICJpQ4TZJAXck/7DQJYqWHPqDEZjfkk="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.gb129s2ux5.css",
+      "AssetFile": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\obj\\Debug\\net9.0\\compressed\\wb4wr7yuz8-gb129s2ux5.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000225123818"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4441"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"k+VOsnBtB+D/ICJpQ4TZJAXck/7DQJYqWHPqDEZjfkk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 11:09:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"1FPfcWMcIfGTbGM35gqDykNTBO8/gB8qSCOOpFcxAJk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gb129s2ux5"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1FPfcWMcIfGTbGM35gqDykNTBO8/gB8qSCOOpFcxAJk="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.gb129s2ux5.css",
+      "AssetFile": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "23708"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1FPfcWMcIfGTbGM35gqDykNTBO8/gB8qSCOOpFcxAJk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 11:09:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2844,7 +2981,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5yfp3vitfp"
+          "Value": "gb129s2ux5"
         },
         {
           "Name": "label",
@@ -2852,13 +2989,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-/Tt4TKhMo54VA3b+FuCTGElcz+yImZWyPzbXLpl0bzQ="
+          "Value": "sha256-1FPfcWMcIfGTbGM35gqDykNTBO8/gB8qSCOOpFcxAJk="
         }
       ]
     },
     {
-      "Route": "css/site.5yfp3vitfp.css.gz",
-      "AssetFile": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\obj\\Debug\\net9.0\\compressed\\wb4wr7yuz8-5yfp3vitfp.gz",
+      "Route": "css/site.gb129s2ux5.css.gz",
+      "AssetFile": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\obj\\Debug\\net9.0\\compressed\\wb4wr7yuz8-gb129s2ux5.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2867,7 +3004,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4827"
+          "Value": "4441"
         },
         {
           "Name": "Content-Type",
@@ -2875,11 +3012,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KCI3WLG38BXmJcFEDdbuyGICgqLGjkBEIgKzL/+rrFs=\""
+          "Value": "\"k+VOsnBtB+D/ICJpQ4TZJAXck/7DQJYqWHPqDEZjfkk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 10:58:46 GMT"
+          "Value": "Tue, 29 Apr 2025 11:09:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2897,7 +3034,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5yfp3vitfp"
+          "Value": "gb129s2ux5"
         },
         {
           "Name": "label",
@@ -2905,144 +3042,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-KCI3WLG38BXmJcFEDdbuyGICgqLGjkBEIgKzL/+rrFs="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\obj\\Debug\\net9.0\\compressed\\wb4wr7yuz8-5yfp3vitfp.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000207125104"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4827"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"KCI3WLG38BXmJcFEDdbuyGICgqLGjkBEIgKzL/+rrFs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 10:58:46 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"/Tt4TKhMo54VA3b+FuCTGElcz+yImZWyPzbXLpl0bzQ=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-/Tt4TKhMo54VA3b+FuCTGElcz+yImZWyPzbXLpl0bzQ="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "26943"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"/Tt4TKhMo54VA3b+FuCTGElcz+yImZWyPzbXLpl0bzQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 10:58:46 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-/Tt4TKhMo54VA3b+FuCTGElcz+yImZWyPzbXLpl0bzQ="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css.gz",
-      "AssetFile": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\obj\\Debug\\net9.0\\compressed\\wb4wr7yuz8-5yfp3vitfp.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4827"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"KCI3WLG38BXmJcFEDdbuyGICgqLGjkBEIgKzL/+rrFs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 10:58:46 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-KCI3WLG38BXmJcFEDdbuyGICgqLGjkBEIgKzL/+rrFs="
+          "Value": "sha256-k+VOsnBtB+D/ICJpQ4TZJAXck/7DQJYqWHPqDEZjfkk="
         }
       ]
     },
