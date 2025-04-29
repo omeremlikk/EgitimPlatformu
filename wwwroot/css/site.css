@@ -69,24 +69,36 @@ body {
   background-color: rgba(230, 126, 34, 0.1);
 }
 
-.btn-outline-primary {
-  color: var(--primary-color);
-  border-color: var(--primary-color);
+.navbar .btn {
+  padding: 10px 25px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border-radius: 30px;
 }
 
-.btn-outline-primary:hover {
+.navbar .btn-outline-primary {
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  background-color: transparent;
+}
+
+.navbar .btn-outline-primary:hover {
   background-color: var(--primary-color);
   color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
 }
 
-.btn-primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+.navbar .btn-primary {
+  background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
+  border: none;
+  color: white;
+  box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
 }
 
-.btn-primary:hover {
-  background-color: var(--primary-dark);
-  border-color: var(--primary-dark);
+.navbar .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(230, 126, 34, 0.4);
 }
 
 /* Ana İçerik Stilleri */
@@ -840,4 +852,155 @@ body {
   padding: 20px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
+}
+
+/* Hakkımızda Bölümü */
+.about-section {
+  background: linear-gradient(135deg, #fff8f0 0%, #ffe0b2 100%);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(230, 126, 34, 0.1), transparent 60%);
+  z-index: 0;
+}
+
+.about-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.about-image {
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s ease;
+  max-width: 100%;
+  height: auto;
+}
+
+.about-image:hover {
+  transform: translateY(-10px);
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  color: var(--secondary-dark);
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  color: var(--gray-text);
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.teacher-info {
+  background-color: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.teacher-info h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.teacher-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.teacher-info li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+}
+
+.teacher-info li:last-child {
+  border-bottom: none;
+}
+
+.teacher-info li i {
+  color: var(--primary-color);
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+/* Profesyonel Soru Çözümü bölümü - hizalama düzeltmeleri */
+#sorular .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#sorular .col-lg-6 {
+  display: flex;
+  flex-direction: column;
+}
+
+#sorular .feature-detailed {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#sorular .feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+#sorular .feature-icon {
+  font-size: 2rem;
+  min-width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+#sorular .feature-text {
+  flex: 1;
+}
+
+#sorular .testimonial {
+  width: 100%;
+  margin: 40px 0;
+}
+
+/* Üye Ol/Giriş Yap butonu animasyonu */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(230, 126, 34, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(230, 126, 34, 0);
+  }
+}
+
+.navbar .btn-primary {
+  animation: pulse 2s infinite;
+}
+
+.navbar .btn-primary:hover {
+  animation: none;
 }

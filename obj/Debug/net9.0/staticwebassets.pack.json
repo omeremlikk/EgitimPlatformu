@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\img\\ogretmen.png",
+      "PackagePath": "staticwebassets\\img\\ogretmen.png"
+    },
+    {
       "Id": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
