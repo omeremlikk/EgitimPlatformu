@@ -95,4 +95,4 @@ C:\Users\Ömer\Desktop\EgitimPlatformu\obj\Debug\net9.0\EgitimPlatformu.pdb
 C:\Users\Ömer\Desktop\EgitimPlatformu\obj\Debug\net9.0\EgitimPlatformu.genruntimeconfig.cache
 C:\Users\Ömer\Desktop\EgitimPlatformu\obj\Debug\net9.0\ref\EgitimPlatformu.dll
 C:\Users\Ömer\Desktop\EgitimPlatformu\obj\Debug\net9.0\EgitimPlatformu.sourcelink.json
-C:\Users\Ömer\Desktop\EgitimPlatformu\obj\Debug\net9.0\compressed\wb4wr7yuz8-gb129s2ux5.gz
+C:\Users\Ömer\Desktop\EgitimPlatformu\obj\Debug\net9.0\compressed\wb4wr7yuz8-6u2lx6w61c.gz

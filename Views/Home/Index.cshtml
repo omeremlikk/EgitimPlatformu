@@ -70,6 +70,7 @@
 </section>
 
 <!-- Sınav Seçimi Section -->
+
 <section id="sinavlar" class="feature-section">
     <div class="container">
         <div class="section-header">
@@ -86,7 +87,7 @@
             
             <div class="exam-content-wrapper">
                 <div class="exam-content active" id="lgs-content">
-                    <div class="row align-items-center">
+                    <div class="row">
                         <div class="col-md-6">
                             <h3>Liselere Geçiş Sınavı Hazırlık</h3>
                             <p class="mb-4">8. sınıf öğrencileri için kapsamlı LGS hazırlık programımız, tüm matematik konularını MEB müfredatına uygun şekilde içerir.</p>
@@ -115,13 +116,13 @@
                             </div>
                         </div>
                         <div class="col-md-6 text-center">
-                            <img src="https://placehold.co/600x400/orange/white?text=LGS+Hazırlık" alt="LGS Hazırlık" class="img-fluid rounded-image">
+                            <div class="lgs-hazirlik">LGS Hazırlık</div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="exam-content" id="tyt-content">
-                    <div class="row align-items-center">
+                <div class="exam-content" id="tyt-content" style="display: none;">
+                    <div class="row">
                         <div class="col-md-6">
                             <h3>Temel Yeterlilik Testi Hazırlık</h3>
                             <p class="mb-4">TYT Matematik bölümüne kapsamlı hazırlık için gerekli tüm konuları içeren programımızla başarıya ulaşın.</p>
@@ -150,13 +151,13 @@
                             </div>
                         </div>
                         <div class="col-md-6 text-center">
-                            <img src="https://placehold.co/600x400/orange/white?text=TYT+Hazırlık" alt="TYT Hazırlık" class="img-fluid rounded-image">
+                            <div class="tyt-hazirlik">TYT Hazırlık</div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="exam-content" id="ayt-content">
-                    <div class="row align-items-center">
+
+                <div class="exam-content" id="ayt-content" style="display: none;">
+                    <div class="row">
                         <div class="col-md-6">
                             <h3>Alan Yeterlilik Testi Hazırlık</h3>
                             <p class="mb-4">AYT Matematik bölümü için ileri düzey konuları ve soru çözme tekniklerini içeren özel programımız.</p>
@@ -185,7 +186,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 text-center">
-                            <img src="https://placehold.co/600x400/orange/white?text=AYT+Hazırlık" alt="AYT Hazırlık" class="img-fluid rounded-image">
+                            <div class="ayt-hazirlik">AYT Hazırlık</div>
                         </div>
                     </div>
                 </div>
@@ -528,23 +529,15 @@
                     const examType = this.getAttribute('data-exam');
                     examContents.forEach(content => {
                         content.classList.remove('active');
+                        content.style.display = 'none';
                     });
                     document.getElementById(`${examType}-content`).classList.add('active');
+                    document.getElementById(`${examType}-content`).style.display = 'block';
                 });
             });
             
-            // Sayfa yüklendiğinde düzgün scroll için
-            if (window.location.hash) {
-                const targetElement = document.querySelector(window.location.hash);
-                if (targetElement) {
-                    setTimeout(function() {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
-                    }, 100);
-                }
-            }
+            // Sayfa yüklendiğinde LGS sekmesi aktif olsun
+            document.querySelector('.exam-tab[data-exam="lgs"]').click();
         });
     </script>
 }
