@@ -18,7 +18,7 @@
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <span class="brand-icon"><i class="fas fa-square-root-alt"></i></span>
-                    <span class="brand-text">Gurbet Catın</span>
+                    <span class="brand-text">Gurbet CATIN</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -43,8 +43,8 @@
                         </li>
                     </ul>
                     <div class="d-flex">
-                        <a href="#" class="btn btn-outline-primary me-2">Giriş Yap</a>
-                        <a href="#" class="btn btn-primary">Üye Ol</a>
+                        <a asp-controller="Account" asp-action="Login" class="btn btn-outline-primary me-2">Giriş Yap</a>
+                        <a asp-controller="Account" asp-action="Register" class="btn btn-primary">Üye Ol</a>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <i class="fas fa-square-root-alt"></i>
-                    <span>Gurbet Catın</span>
+                    <span>Gurbet CATIN</span>
                 </div>
                 
                 <div class="footer-social">

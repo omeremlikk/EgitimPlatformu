@@ -1,0 +1,1031 @@
+@{
+    ViewData["Title"] = "Öğretmen Paneli";
+    Layout = "_LayoutDashboard";
+}
+
+<div class="teacher-dashboard">
+    <div class="container-fluid">
+        <!-- Header -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="welcome-header">
+                    <h1 class="dashboard-title">
+                        <i class="fas fa-chalkboard-teacher text-primary"></i>
+                        Hoş Geldiniz, @ViewBag.UserName
+                    </h1>
+                    <p class="text-muted">Öğretmen Kontrol Paneli</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sol Kolon - Paket Yönetimi -->
+            <div class="col-md-8">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-box-open me-2"></i>
+                            Eğitim Paketleri Yönetimi
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <!-- LGS Paketi -->
+                            <div class="col-md-4 mb-3">
+                                <div class="package-card lgs-card">
+                                    <div class="package-header">
+                                        <h6 class="package-title">LGS Paketi</h6>
+                                        <span class="package-badge">8. Sınıf</span>
+                                    </div>
+                                    <div class="package-content">
+                                        <p class="package-desc">Lise Giriş Sınavı hazırlık paketi</p>
+                                        <div class="package-stats">
+                                            <small class="text-muted">
+                                                <i class="fas fa-users"></i> 15 Öğrenci
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="package-actions">
+                                        <button class="btn btn-sm btn-outline-primary me-2" onclick="editPackage('lgs')">
+                                            <i class="fas fa-edit"></i> Düzenle
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-success" onclick="viewStudents('lgs')">
+                                            <i class="fas fa-users"></i> Öğrenciler
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TYT Paketi -->
+                            <div class="col-md-4 mb-3">
+                                <div class="package-card tyt-card">
+                                    <div class="package-header">
+                                        <h6 class="package-title">TYT Paketi</h6>
+                                        <span class="package-badge">11-12. Sınıf</span>
+                                    </div>
+                                    <div class="package-content">
+                                        <p class="package-desc">Temel Yeterlilik Testi hazırlık</p>
+                                        <div class="package-stats">
+                                            <small class="text-muted">
+                                                <i class="fas fa-users"></i> 23 Öğrenci
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="package-actions">
+                                        <button class="btn btn-sm btn-outline-primary me-2" onclick="editPackage('tyt')">
+                                            <i class="fas fa-edit"></i> Düzenle
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-success" onclick="viewStudents('tyt')">
+                                            <i class="fas fa-users"></i> Öğrenciler
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- AYT Paketi -->
+                            <div class="col-md-4 mb-3">
+                                <div class="package-card ayt-card">
+                                    <div class="package-header">
+                                        <h6 class="package-title">AYT Paketi</h6>
+                                        <span class="package-badge">12. Sınıf</span>
+                                    </div>
+                                    <div class="package-content">
+                                        <p class="package-desc">Alan Yeterlilik Testi hazırlık</p>
+                                        <div class="package-stats">
+                                            <small class="text-muted">
+                                                <i class="fas fa-users"></i> 18 Öğrenci
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="package-actions">
+                                        <button class="btn btn-sm btn-outline-primary me-2" onclick="editPackage('ayt')">
+                                            <i class="fas fa-edit"></i> Düzenle
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-success" onclick="viewStudents('ayt')">
+                                            <i class="fas fa-users"></i> Öğrenciler
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- İstatistikler -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-success">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>56</h3>
+                                <p>Toplam Öğrenci</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-info">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>12</h3>
+                                <p>Yeni Mesaj</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-warning">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>8</h3>
+                                <p>Aktif Test</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-danger">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>%94</h3>
+                                <p>Başarı Oranı</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sağ Kolon - Mesajlaşma -->
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-comments me-2"></i>
+                            Öğrenci Mesajları
+                        </h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="message-list" id="messageList" style="height: 400px; overflow-y: auto;">
+                            <div class="text-center p-4">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p class="mt-2">Mesajlar yükleniyor...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-md-8 mb-2">
+                                <div class="input-group">
+                                    <select class="form-select form-select-sm" id="replyToStudent">
+                                        <option value="">Öğrenci Seçin</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <button class="btn btn-primary btn-sm w-100" onclick="showReplyModal()">
+                                    <i class="fas fa-reply me-1"></i>
+                                    Mesaj Gönder
+                                </button>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-sm w-100" onclick="loadMessages()">
+                            <i class="fas fa-refresh me-2"></i>
+                            Mesajları Yenile
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Öğrenci Sohbet Modal -->
+<div class="modal fade" id="studentChatModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">
+                    <i class="fas fa-comments me-2"></i>
+                    <span id="chatStudentName">Öğrenci Sohbeti</span>
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body p-0">
+                <!-- Sohbet Alanı -->
+                <div id="chatMessages" style="height: 400px; overflow-y: auto; padding: 15px; background-color: #f8f9fa;">
+                    <div class="text-center p-4">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p class="mt-2">Sohbet yükleniyor...</p>
+                    </div>
+                </div>
+                
+                <!-- Mesaj Gönderme Alanı -->
+                <div class="chat-input-area p-3 border-top">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <select class="form-select form-select-sm" id="chatMessageSubject">
+                                <option value="Genel Cevap">Genel Cevap</option>
+                                <option value="LGS Konuları">LGS Konuları</option>
+                                <option value="TYT Konuları">TYT Konuları</option>
+                                <option value="AYT Konuları">AYT Konuları</option>
+                                <option value="Teknik Destek">Teknik Destek</option>
+                            </select>
+                        </div>
+                        <div class="col-md-7">
+                            <textarea class="form-control form-control-sm" id="chatMessageContent" rows="2" 
+                                    placeholder="Mesajınızı yazın..." style="resize: none;"></textarea>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-primary btn-sm w-100 h-100" onclick="sendChatMessage()">
+                                <i class="fas fa-paper-plane"></i>
+                                <br><small>Gönder</small>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Paket Düzenleme Modal -->
+<div class="modal fade" id="packageEditModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-dark">
+                <h5 class="modal-title">
+                    <i class="fas fa-edit me-2"></i>
+                    <span id="packageEditTitle">Paket Düzenle</span>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="packageEditForm">
+                    <input type="hidden" id="packageId" />
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="packageDescription" class="form-label">Paket Açıklaması</label>
+                                <input type="text" class="form-control" id="packageDescription" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="packagePrice" class="form-label">Fiyat (₺)</label>
+                                <input type="number" step="0.01" class="form-control" id="packagePrice" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="packageVideoCount" class="form-label">Video Sayısı</label>
+                                <input type="number" class="form-control" id="packageVideoCount" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="packageTestCount" class="form-label">Test Sayısı</label>
+                                <input type="number" class="form-control" id="packageTestCount" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="packageDuration" class="form-label">Süre (Ay)</label>
+                                <input type="number" class="form-control" id="packageDuration" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Paket Özellikleri</label>
+                        <div class="row" id="packageFeatures">
+                            <!-- Özellikler dinamik olarak yüklenecek -->
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="packageIsActive">
+                            <label class="form-check-label" for="packageIsActive">
+                                Paket Aktif
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                <button type="button" class="btn btn-warning" onclick="savePackage()">
+                    <i class="fas fa-save me-2"></i>
+                    Kaydet
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mesaj Gönderme Modal -->
+<div class="modal fade" id="replyModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-paper-plane me-2"></i>
+                    Öğrenciye Mesaj Gönder
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="teacherMessageForm">
+                    <div class="mb-3">
+                        <label for="teacherMessageStudent" class="form-label">Öğrenci</label>
+                        <select class="form-select" id="teacherMessageStudent" required>
+                            <option value="">Öğrenci Seçin</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="teacherMessageSubject" class="form-label">Konu</label>
+                        <select class="form-select" id="teacherMessageSubject" required>
+                            <option value="">Konu Seçin</option>
+                            <option value="LGS Konuları">LGS Konuları</option>
+                            <option value="TYT Konuları">TYT Konuları</option>
+                            <option value="AYT Konuları">AYT Konuları</option>
+                            <option value="Genel Bilgi">Genel Bilgi</option>
+                            <option value="Teknik Destek">Teknik Destek</option>
+                            <option value="Diğer">Diğer</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="teacherMessageContent" class="form-label">Mesajınız</label>
+                        <textarea class="form-control" id="teacherMessageContent" rows="4" 
+                                placeholder="Mesajınızı buraya yazın..." required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                <button type="button" class="btn btn-primary" onclick="sendTeacherMessage()">
+                    <i class="fas fa-paper-plane me-2"></i>
+                    Mesajı Gönder
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.teacher-dashboard {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+    position: relative;
+}
+
+.welcome-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.dashboard-title {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.package-card {
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 20px;
+    background: white;
+    transition: all 0.3s;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.lgs-card { border-left: 4px solid #28a745; }
+.tyt-card { border-left: 4px solid #007bff; }
+.ayt-card { border-left: 4px solid #dc3545; }
+
+.package-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.package-title {
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.package-badge {
+    background: #6c757d;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+}
+
+.package-content {
+    flex-grow: 1;
+}
+
+.package-desc {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.package-actions {
+    margin-top: auto;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 24px;
+    color: white;
+}
+
+.stat-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.stat-content p {
+    color: #6c757d;
+    margin: 0;
+}
+
+.message-item {
+    display: flex;
+    padding: 15px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.message-avatar {
+    margin-right: 15px;
+    font-size: 24px;
+}
+
+.message-content {
+    flex-grow: 1;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.message-sender {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.message-time {
+    color: #6c757d;
+    font-size: 0.8em;
+}
+
+.message-text {
+    color: #495057;
+    font-size: 0.9em;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.sent-message {
+    background-color: #e3f2fd;
+    border-left: 4px solid #2196F3;
+}
+
+.received-message {
+    background-color: #f3e5f5;
+    border-left: 4px solid #9C27B0;
+}
+
+/* Chat Message Styles */
+.chat-message-sent {
+    max-width: 70%;
+    background-color: #007bff;
+    color: white;
+    border-radius: 18px 18px 5px 18px;
+    padding: 10px 15px;
+    margin-left: auto;
+}
+
+.chat-message-received {
+    max-width: 70%;
+    background-color: #e9ecef;
+    color: #212529;
+    border-radius: 18px 18px 18px 5px;
+    padding: 10px 15px;
+    margin-right: auto;
+}
+
+.chat-message-content p {
+    margin: 0;
+    word-wrap: break-word;
+}
+
+.chat-message-time {
+    opacity: 0.7;
+    font-size: 0.75rem;
+}
+
+.chat-input-area {
+    background-color: #fff;
+}
+
+.message-item {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.message-item:hover {
+    background-color: #f8f9fa;
+}
+</style>
+
+<script>
+function editPackage(packageType) {
+    // Paket tipine göre ID belirle
+    let packageId;
+    switch(packageType.toLowerCase()) {
+        case 'lgs': packageId = 1; break;
+        case 'tyt': packageId = 2; break;
+        case 'ayt': packageId = 3; break;
+        default: return;
+    }
+    
+    // Paket bilgilerini yükle
+    loadPackageData(packageId);
+}
+
+function viewStudents(packageType) {
+    alert(`${packageType.toUpperCase()} paketindeki öğrenciler listeleneeck`);
+}
+
+// Mesajları yükle
+function loadMessages() {
+    fetch('/Message/GetMessages')
+        .then(response => response.json())
+        .then(data => {
+            const messageList = document.getElementById('messageList');
+            const replyToStudent = document.getElementById('replyToStudent');
+            const teacherMessageStudent = document.getElementById('teacherMessageStudent');
+            
+            // Öğrenci seçeneklerini temizle
+            replyToStudent.innerHTML = '<option value="">Öğrenci Seçin</option>';
+            teacherMessageStudent.innerHTML = '<option value="">Öğrenci Seçin</option>';
+            
+            if (data.success && data.data.length > 0) {
+                let messagesHtml = '';
+                const students = new Set();
+                
+                data.data.forEach(message => {
+                    // Öğrenci listesini topla
+                    if (!message.isSentByMe) {
+                        students.add(JSON.stringify({id: message.senderId, name: message.senderName}));
+                    } else {
+                        students.add(JSON.stringify({id: message.receiverId, name: message.receiverName}));
+                    }
+                    
+                    // Mesaj HTML'i oluştur
+                    const messageClass = message.isSentByMe ? 'sent-message' : 'received-message';
+                    const messageIcon = message.isSentByMe ? 'fas fa-paper-plane text-success' : 'fas fa-user-circle text-primary';
+                    
+                    messagesHtml += `
+                        <div class="message-item ${messageClass}" onclick="openStudentChat(${message.isSentByMe ? message.receiverId : message.senderId}, '${message.isSentByMe ? message.receiverName : message.senderName}')">
+                            <div class="message-avatar">
+                                <i class="${messageIcon}"></i>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <span class="message-sender">${message.isSentByMe ? 'Siz → ' + message.receiverName : message.senderName}</span>
+                                    <span class="message-time">${message.sentAt}</span>
+                                    ${!message.isRead && !message.isSentByMe ? '<span class="badge bg-danger ms-2">Yeni</span>' : ''}
+                                </div>
+                                <p class="message-text">${message.content.substring(0, 100)}${message.content.length > 100 ? '...' : ''}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                // Öğrenci seçeneklerini ekle
+                students.forEach(studentStr => {
+                    const student = JSON.parse(studentStr);
+                    const option1 = document.createElement('option');
+                    option1.value = student.id;
+                    option1.textContent = student.name;
+                    replyToStudent.appendChild(option1);
+                    
+                    const option2 = document.createElement('option');
+                    option2.value = student.id;
+                    option2.textContent = student.name;
+                    teacherMessageStudent.appendChild(option2);
+                });
+                
+                messageList.innerHTML = messagesHtml || '<div class="text-center p-4"><p class="text-muted">Henüz mesaj bulunmuyor.</p></div>';
+            } else {
+                messageList.innerHTML = '<div class="text-center p-4"><p class="text-muted">Henüz mesaj bulunmuyor.</p></div>';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('messageList').innerHTML = '<div class="text-center p-4"><p class="text-danger">Mesajlar yüklenirken hata oluştu.</p></div>';
+        });
+}
+
+function markAsRead(messageId) {
+    fetch('/Message/MarkAsRead', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ messageId: messageId })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            loadMessages(); // Mesajları yeniden yükle
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+function showReplyModal() {
+    const selectedStudent = document.getElementById('replyToStudent').value;
+    if (!selectedStudent) {
+        alert('Lütfen önce bir öğrenci seçin!');
+        return;
+    }
+    
+    // Seçili öğrenciyi modal'da da seç
+    document.getElementById('teacherMessageStudent').value = selectedStudent;
+    
+    // Modal'ı aç
+    new bootstrap.Modal(document.getElementById('replyModal')).show();
+}
+
+function sendTeacherMessage() {
+    const studentId = document.getElementById('teacherMessageStudent').value;
+    const subject = document.getElementById('teacherMessageSubject').value;
+    const content = document.getElementById('teacherMessageContent').value;
+    
+    if (!studentId || !subject || !content.trim()) {
+        alert('Lütfen tüm alanları doldurun!');
+        return;
+    }
+    
+    // AJAX ile mesaj gönder
+    fetch('/Message/Send', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            subject: subject,
+            content: content,
+            receiverId: parseInt(studentId)
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Mesajınız başarıyla gönderildi!');
+            
+            // Form temizle
+            document.getElementById('teacherMessageForm').reset();
+            
+            // Modal'ı kapat
+            bootstrap.Modal.getInstance(document.getElementById('replyModal')).hide();
+            
+            // Mesajları yeniden yükle
+            loadMessages();
+        } else {
+            alert('Mesaj gönderilirken bir hata oluştu: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Mesaj gönderilirken bir hata oluştu!');
+    });
+}
+
+let currentChatStudentId = null;
+let currentChatStudentName = '';
+
+function openStudentChat(studentId, studentName) {
+    currentChatStudentId = studentId;
+    currentChatStudentName = studentName;
+    
+    // Modal başlığını güncelle
+    document.getElementById('chatStudentName').textContent = studentName + ' ile Sohbet';
+    
+    // Modal'ı aç
+    new bootstrap.Modal(document.getElementById('studentChatModal')).show();
+    
+    // Sohbet mesajlarını yükle
+    loadChatMessages(studentId);
+}
+
+function loadChatMessages(studentId) {
+    fetch(`/Message/GetChatMessages?studentId=${studentId}`)
+        .then(response => response.json())
+        .then(data => {
+            const chatMessages = document.getElementById('chatMessages');
+            
+            if (data.success && data.data.length > 0) {
+                let messagesHtml = '';
+                
+                data.data.forEach(message => {
+                    const isMyMessage = message.isSentByMe;
+                    const messageClass = isMyMessage ? 'chat-message-sent' : 'chat-message-received';
+                    const alignClass = isMyMessage ? 'justify-content-end' : 'justify-content-start';
+                    
+                    messagesHtml += `
+                        <div class="d-flex ${alignClass} mb-3">
+                            <div class="${messageClass}">
+                                <div class="chat-message-content">
+                                    <p class="mb-1">${message.content}</p>
+                                    <small class="chat-message-time">${message.sentAt}</small>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                chatMessages.innerHTML = messagesHtml;
+                
+                // En alt mesaja scroll
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            } else {
+                chatMessages.innerHTML = '<div class="text-center p-4"><p class="text-muted">Henüz mesaj bulunmuyor. İlk mesajı gönderin!</p></div>';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('chatMessages').innerHTML = '<div class="text-center p-4"><p class="text-danger">Sohbet yüklenirken hata oluştu.</p></div>';
+        });
+}
+
+function sendChatMessage() {
+    const subject = document.getElementById('chatMessageSubject').value;
+    const content = document.getElementById('chatMessageContent').value;
+    
+    if (!content.trim()) {
+        alert('Lütfen mesajınızı yazın!');
+        return;
+    }
+    
+    if (!currentChatStudentId) {
+        alert('Öğrenci seçimi hatası!');
+        return;
+    }
+    
+    // AJAX ile mesaj gönder
+    fetch('/Message/Send', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            subject: subject,
+            content: content,
+            receiverId: currentChatStudentId
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Mesajı temizle
+            document.getElementById('chatMessageContent').value = '';
+            
+            // Sohbeti yeniden yükle
+            loadChatMessages(currentChatStudentId);
+            
+            // Ana mesaj listesini de güncelle
+            loadMessages();
+        } else {
+            alert('Mesaj gönderilirken bir hata oluştu: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Mesaj gönderilirken bir hata oluştu!');
+    });
+}
+
+// Enter tuşu ile mesaj gönderme
+document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('keydown', function(event) {
+        if (event.target.id === 'chatMessageContent' && event.key === 'Enter' && !event.shiftKey) {
+            event.preventDefault();
+            sendChatMessage();
+        }
+    });
+});
+
+// Sayfa yüklendiğinde mesajları yükle
+document.addEventListener('DOMContentLoaded', function() {
+    loadMessages();
+    
+    // Her 5 saniyede bir mesajları yenile (daha hızlı)
+    setInterval(loadMessages, 5000);
+    
+    // Eğer sohbet açıksa, sohbeti de yenile
+    setInterval(function() {
+        if (currentChatStudentId && document.getElementById('studentChatModal').classList.contains('show')) {
+            loadChatMessages(currentChatStudentId);
+        }
+    }, 3000);
+});
+
+// Paket yönetimi fonksiyonları
+function loadPackageData(packageId) {
+    fetch(`/Package/GetById?id=${packageId}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const pkg = data.data;
+                
+                // Modal başlığını güncelle
+                document.getElementById('packageEditTitle').textContent = `${pkg.name} Paketi Düzenle`;
+                
+                // Form alanlarını doldur
+                document.getElementById('packageId').value = pkg.id;
+                document.getElementById('packageDescription').value = pkg.description;
+                document.getElementById('packagePrice').value = pkg.price;
+                document.getElementById('packageVideoCount').value = pkg.videoCount;
+                document.getElementById('packageTestCount').value = pkg.testCount;
+                document.getElementById('packageDuration').value = pkg.durationMonths;
+                document.getElementById('packageIsActive').checked = pkg.isActive;
+                
+                // Özellikleri yükle
+                loadPackageFeatures(pkg.features, pkg.name);
+                
+                // Modal'ı aç
+                new bootstrap.Modal(document.getElementById('packageEditModal')).show();
+            } else {
+                alert('Paket bilgileri yüklenirken hata oluştu: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Paket bilgileri yüklenirken hata oluştu!');
+        });
+}
+
+function loadPackageFeatures(featuresJson, packageName) {
+    const featuresContainer = document.getElementById('packageFeatures');
+    let features;
+    
+    try {
+        features = JSON.parse(featuresJson || '{}');
+    } catch (e) {
+        features = {};
+    }
+    
+    // Paket tipine göre özellik listesi
+    let availableFeatures = {};
+    
+    switch(packageName.toUpperCase()) {
+        case 'LGS':
+            availableFeatures = {
+                'matematik': 'Matematik',
+                'turkce': 'Türkçe',
+                'fen': 'Fen Bilimleri',
+                'sosyal': 'Sosyal Bilgiler',
+                'ingilizce': 'İngilizce'
+            };
+            break;
+        case 'TYT':
+            availableFeatures = {
+                'matematik': 'Matematik',
+                'turkce': 'Türkçe',
+                'fen': 'Fen Bilimleri',
+                'sosyal': 'Sosyal Bilimler'
+            };
+            break;
+        case 'AYT':
+            availableFeatures = {
+                'matematik': 'Matematik',
+                'fizik': 'Fizik',
+                'kimya': 'Kimya',
+                'biyoloji': 'Biyoloji'
+            };
+            break;
+    }
+    
+    let featuresHtml = '';
+    for (const [key, label] of Object.entries(availableFeatures)) {
+        const isChecked = features[key] ? 'checked' : '';
+        featuresHtml += `
+            <div class="col-md-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="feature_${key}" ${isChecked}>
+                    <label class="form-check-label" for="feature_${key}">
+                        ${label}
+                    </label>
+                </div>
+            </div>
+        `;
+    }
+    
+    featuresContainer.innerHTML = featuresHtml;
+}
+
+function savePackage() {
+    const packageId = document.getElementById('packageId').value;
+    const description = document.getElementById('packageDescription').value;
+    const price = parseFloat(document.getElementById('packagePrice').value);
+    const videoCount = parseInt(document.getElementById('packageVideoCount').value);
+    const testCount = parseInt(document.getElementById('packageTestCount').value);
+    const duration = parseInt(document.getElementById('packageDuration').value);
+    const isActive = document.getElementById('packageIsActive').checked;
+    
+    // Özellikleri topla
+    const features = {};
+    const featureInputs = document.querySelectorAll('#packageFeatures input[type="checkbox"]');
+    featureInputs.forEach(input => {
+        const key = input.id.replace('feature_', '');
+        features[key] = input.checked;
+    });
+    
+    const packageData = {
+        id: parseInt(packageId),
+        description: description,
+        price: price,
+        videoCount: videoCount,
+        testCount: testCount,
+        durationMonths: duration,
+        features: JSON.stringify(features),
+        isActive: isActive
+    };
+    
+    // API'ye gönder
+    fetch('/Package/Update', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(packageData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Paket başarıyla güncellendi!');
+            
+            // Modal'ı kapat
+            bootstrap.Modal.getInstance(document.getElementById('packageEditModal')).hide();
+            
+            // Sayfayı yenile (paket bilgilerini güncellemek için)
+            setTimeout(() => {
+                location.reload();
+            }, 1000);
+        } else {
+            alert('Paket güncellenirken hata oluştu: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Paket güncellenirken hata oluştu!');
+    });
+}
+</script>

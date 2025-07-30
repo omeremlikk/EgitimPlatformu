@@ -1545,3 +1545,594 @@ body {
   color: var(--dark-text);
   font-size: 1.05rem;
 }
+
+/* Login Sayfası Stilleri */
+.login-container {
+  min-height: calc(100vh - 180px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  background-color: var(--bg-cream);
+  position: relative;
+}
+
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(245, 155, 69, 0.05), transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(169, 132, 103, 0.05), transparent 30%);
+  z-index: 0;
+}
+
+.login-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+  background-color: white;
+  margin: 20px 0;
+}
+
+/* Sol taraf - Banner */
+.login-banner {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://placehold.co/600x400/orange/white?text=Matematik') center/cover no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.login-banner-content {
+  position: relative;
+  z-index: 1;
+  padding: 40px 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.login-logo i {
+  font-size: 1.8rem;
+  margin-right: 10px;
+  color: white;
+}
+
+.login-logo span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.login-banner-content h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.login-banner-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.login-benefits {
+  margin-top: auto;
+}
+
+.login-benefit-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.login-benefit-item i {
+  font-size: 1rem;
+  color: white;
+  margin-right: 12px;
+}
+
+.login-benefit-item span {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Sağ taraf - Form */
+.login-form-container {
+  padding: 0;
+}
+
+.login-form-content {
+  padding: 40px 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form-content h2 {
+  color: var(--dark-text);
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.login-form label {
+  color: var(--dark-text);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.login-form .input-group-text {
+  background-color: white;
+  border-right: none;
+  color: var(--gray-text);
+}
+
+.login-form .form-control {
+  border-left: none;
+  padding-left: 0;
+}
+
+.login-form .form-control:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+.forgot-password {
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.password-toggle {
+  border-left: none;
+  background-color: white;
+  color: var(--gray-text);
+}
+
+.password-toggle:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.btn-login {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  border: none;
+  padding: 12px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(245, 155, 69, 0.2);
+}
+
+.btn-login:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(245, 155, 69, 0.3);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+}
+
+.btn-login i {
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-login:hover i {
+  transform: translateX(5px);
+}
+
+.signup-link {
+  font-size: 0.95rem;
+  color: var(--gray-text);
+}
+
+.signup-link a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.signup-link a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.login-divider {
+  text-align: center;
+  position: relative;
+  margin: 30px 0;
+}
+
+.login-divider::before, .login-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: calc(50% - 30px);
+  height: 1px;
+  background-color: #eee;
+}
+
+.login-divider::before {
+  left: 0;
+}
+
+.login-divider::after {
+  right: 0;
+}
+
+.login-divider span {
+  display: inline-block;
+  padding: 0 15px;
+  background-color: white;
+  color: var(--gray-text);
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+}
+
+.social-login {
+  margin-top: 5px;
+}
+
+.btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+  background-color: white;
+  color: var(--dark-text);
+  transition: all 0.3s ease;
+}
+
+.btn-social:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-google i {
+  color: #DB4437;
+}
+
+/* ... existing code ... */
+
+/* Üye Olma Sayfası Stilleri */
+.register-container {
+  min-height: calc(100vh - 180px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  background-color: var(--bg-cream);
+  position: relative;
+}
+
+.register-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(245, 155, 69, 0.05), transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(169, 132, 103, 0.05), transparent 30%);
+  z-index: 0;
+}
+
+.register-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+  background-color: white;
+  margin: 20px 0;
+}
+
+/* Sol taraf - Banner */
+.register-banner {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://placehold.co/600x400/orange/white?text=Matematik') center/cover no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.register-banner-content {
+  position: relative;
+  z-index: 1;
+  padding: 40px 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.register-logo i {
+  font-size: 1.8rem;
+  margin-right: 10px;
+  color: white;
+}
+
+.register-logo span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.register-banner-content h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.register-banner-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.register-benefits {
+  margin-top: auto;
+}
+
+.register-benefit-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.register-benefit-item i {
+  font-size: 1rem;
+  color: white;
+  margin-right: 12px;
+}
+
+.register-benefit-item span {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Sağ taraf - Form */
+.register-form-container {
+  padding: 0;
+  max-height: 700px;
+  overflow-y: auto;
+}
+
+.register-form-content {
+  padding: 40px 30px;
+  height: 100%;
+}
+
+.register-form-content h2 {
+  color: var(--dark-text);
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.register-form label {
+  color: var(--dark-text);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.register-form .input-group-text {
+  background-color: white;
+  border-right: none;
+  color: var(--gray-text);
+}
+
+.register-form .form-control, .register-form .form-select {
+  border-left: none;
+  padding-left: 0;
+}
+
+.register-form .form-control:focus, .register-form .form-select:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+.form-text {
+  font-size: 0.8rem;
+  margin-top: 5px;
+  color: var(--gray-text);
+}
+
+.terms-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.terms-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.btn-register {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  border: none;
+  padding: 12px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(245, 155, 69, 0.2);
+}
+
+.btn-register:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(245, 155, 69, 0.3);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+}
+
+.btn-register i {
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-register:hover i {
+  transform: translateX(5px);
+}
+
+.login-link {
+  font-size: 0.95rem;
+  color: var(--gray-text);
+}
+
+.login-link a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.login-link a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.register-divider {
+  text-align: center;
+  position: relative;
+  margin: 30px 0;
+}
+
+.register-divider::before, .register-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: calc(50% - 30px);
+  height: 1px;
+  background-color: #eee;
+}
+
+.register-divider::before {
+  left: 0;
+}
+
+.register-divider::after {
+  right: 0;
+}
+
+.register-divider span {
+  display: inline-block;
+  padding: 0 15px;
+  background-color: white;
+  color: var(--gray-text);
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+}
+
+.social-register {
+  margin-top: 5px;
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 768px) {
+  .register-banner {
+    border-radius: 20px 20px 0 0;
+    padding: 30px;
+  }
+  
+  .register-banner-content {
+    padding: 20px 0;
+  }
+  
+  .register-form-content {
+    padding: 30px 20px;
+  }
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 768px) {
+  .login-banner {
+    border-radius: 20px 20px 0 0;
+    padding: 30px;
+  }
+  
+  .login-banner-content {
+    padding: 20px 0;
+  }
+  
+  .login-form-content {
+    padding: 30px 20px;
+  }
+}

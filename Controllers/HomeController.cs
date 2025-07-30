@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using EgitimPlatformu.Models;
 
 namespace EgitimPlatformu.Controllers;
@@ -20,6 +21,20 @@ public class HomeController : Controller
 
     public IActionResult Privacy()
     {
+        return View();
+    }
+
+    [Authorize(Roles = "Teacher")]
+    public IActionResult TeacherDashboard()
+    {
+        ViewBag.UserName = User.Identity?.Name;
+        return View();
+    }
+
+    [Authorize(Roles = "Student")]
+    public IActionResult StudentDashboard()
+    {
+        ViewBag.UserName = User.Identity?.Name;
         return View();
     }
 

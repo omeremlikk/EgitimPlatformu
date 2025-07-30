@@ -1,0 +1,169 @@
+@{
+    ViewData["Title"] = "Üye Ol";
+}
+
+<div class="register-container">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <div class="register-card">
+                    <div class="row g-0">
+                        <!-- Sol taraf - Görsel ve Motivasyon Metni -->
+                        <div class="col-md-5 register-banner">
+                            <div class="register-banner-content">
+                                <div class="register-logo">
+                                    <i class="fas fa-square-root-alt"></i>
+                                    <span>Gurbet Catın</span>
+                                </div>
+                                <h2>Matematik Başarısına İlk Adımı At</h2>
+                                <p>Üye ol, kişiselleştirilmiş matematik eğitiminin avantajlarından hemen yararlanmaya başla.</p>
+                                <div class="register-benefits">
+                                    <div class="register-benefit-item">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>MEB uyumlu sınav hazırlık içerikleri</span>
+                                    </div>
+                                    <div class="register-benefit-item">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Kişiselleştirilmiş test ve çalışma planı</span>
+                                    </div>
+                                    <div class="register-benefit-item">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Öğretmen destekli soru çözümleri</span>
+                                    </div>
+                                    <div class="register-benefit-item">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Ücretsiz deneme sınavları</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Sağ taraf - Kayıt Formu -->
+                        <div class="col-md-7 register-form-container">
+                            <div class="register-form-content">
+                                <h2 class="text-center mb-4">Hemen Üye Ol</h2>
+                                
+                                <form class="register-form">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="firstName" class="form-label">Adınız</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                <input type="text" class="form-control" id="firstName" placeholder="Adınız" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="lastName" class="form-label">Soyadınız</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                <input type="text" class="form-control" id="lastName" placeholder="Soyadınız" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">E-posta Adresiniz</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                            <input type="email" class="form-control" id="email" placeholder="ornek@email.com" required>
+                                        </div>
+                                        <small class="form-text text-muted">Bu e-posta ile giriş yapacaksınız</small>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label">Telefon Numaranız (Opsiyonel)</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                            <input type="tel" class="form-control" id="phone" placeholder="(5XX) XXX XX XX">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="userType" class="form-label">Üyelik Türü</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-user-graduate"></i></span>
+                                            <select class="form-select" id="userType" required>
+                                                <option value="" selected disabled>Lütfen seçiniz</option>
+                                                <option value="student">Öğrenci</option>
+                                                <option value="parent">Veli</option>
+                                                <option value="teacher">Öğretmen</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Şifreniz</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                            <input type="password" class="form-control" id="password" placeholder="Şifrenizi girin" required>
+                                            <button class="btn btn-outline-secondary password-toggle" type="button">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                        <small class="form-text text-muted">En az 8 karakter, bir büyük harf ve bir rakam içermelidir</small>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="confirmPassword" class="form-label">Şifre Tekrarı</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                            <input type="password" class="form-control" id="confirmPassword" placeholder="Şifrenizi tekrar girin" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="terms" required>
+                                        <label class="form-check-label" for="terms">
+                                            <a href="#" class="terms-link">Kullanım Koşullarını</a> ve <a href="#" class="terms-link">Gizlilik Politikasını</a> okudum, kabul ediyorum.
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="d-grid gap-2 mt-4">
+                                        <button type="submit" class="btn btn-primary btn-register">
+                                            <span>Hesabımı Oluştur</span>
+                                            <i class="fas fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                                
+                                <div class="text-center mt-4 login-link">
+                                    Zaten üye misiniz? <a asp-controller="Account" asp-action="Login">Giriş Yapın</a>
+                                </div>
+                                
+                                <div class="register-divider">
+                                    <span>veya</span>
+                                </div>
+                                
+                                <div class="social-register">
+                                    <button class="btn btn-social btn-google">
+                                        <i class="fab fa-google"></i>
+                                        <span>Google ile Kaydol</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Şifre göster/gizle fonksiyonu
+            const togglePassword = document.querySelector('.password-toggle');
+            const password = document.querySelector('#password');
+            
+            togglePassword.addEventListener('click', function() {
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+                
+                // İkon değiştirme
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+        });
+    </script>
+} 
