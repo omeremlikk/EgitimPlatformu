@@ -29,6 +29,19 @@ using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     context.Database.EnsureCreated();
+    
+    // Package tablosunun varlığını kontrol et - try-catch ile
+    try
+    {
+        if (!context.Packages.Any())
+        {
+            Console.WriteLine("Package tablosu boş, seed data ekleniyor...");
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Package tablosu henüz oluşmamış: {ex.Message}");
+    }
 }
 
 // Configure the HTTP request pipeline.
