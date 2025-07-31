@@ -9,10 +9,10 @@ namespace EgitimPlatformu.Data
         {
         }
 
-            // DbSets
-    public DbSet<User> Users { get; set; }
-    public DbSet<Message> Messages { get; set; }
-    public DbSet<Package> Packages { get; set; }
+        // DbSets
+        public DbSet<User> Users { get; set; } = null!;
+        public DbSet<Message> Messages { get; set; } = null!;
+        public DbSet<Package> Packages { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

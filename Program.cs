@@ -28,19 +28,39 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    
+    // Veritabanını oluştur
     context.Database.EnsureCreated();
     
-    // Package tablosunun varlığını kontrol et - try-catch ile
+    Console.WriteLine("Veritabanı oluşturuldu.");
+    
+    // Tüm tabloları kontrol et
     try
     {
-        if (!context.Packages.Any())
+        var tables = context.Database.SqlQueryRaw<string>("SELECT name FROM sqlite_master WHERE type='table'").ToList();
+        Console.WriteLine($"Mevcut tablolar: {string.Join(", ", tables)}");
+        
+        // Package tablosunu kontrol et
+        if (tables.Contains("Packages"))
         {
-            Console.WriteLine("Package tablosu boş, seed data ekleniyor...");
+            Console.WriteLine("Packages tablosu mevcut.");
+            if (!context.Packages.Any())
+            {
+                Console.WriteLine("Package tablosu boş, seed data ekleniyor...");
+            }
+            else
+            {
+                Console.WriteLine($"Package tablosunda {context.Packages.Count()} kayıt bulundu.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Packages tablosu bulunamadı!");
         }
     }
     catch (Exception ex)
     {
-        Console.WriteLine($"Package tablosu henüz oluşmamış: {ex.Message}");
+        Console.WriteLine($"Veritabanı kontrol hatası: {ex.Message}");
     }
 }
 
