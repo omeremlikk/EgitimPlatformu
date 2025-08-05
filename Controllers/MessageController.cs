@@ -17,6 +17,30 @@ namespace EgitimPlatformu.Controllers
             _context = context;
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetStudents()
+        {
+            try
+            {
+                var students = await _context.Users
+                    .Where(u => u.Role == "Student" && u.IsActive)
+                    .Select(u => new
+                    {
+                        id = u.Id,
+                        name = u.FirstName + " " + u.LastName,
+                        email = u.Email
+                    })
+                    .OrderBy(u => u.name)
+                    .ToListAsync();
+
+                return Json(new { success = true, data = students });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> Send([FromBody] SendMessageRequest request)
         {

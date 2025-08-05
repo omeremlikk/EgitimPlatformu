@@ -13,7 +13,7 @@
                         <i class="fas fa-chalkboard-teacher text-primary"></i>
                         Hoş Geldiniz, @ViewBag.UserName
                     </h1>
-                    <p class="text-muted">Öğretmen Kontrol Paneli</p>
+                    <p class="text-muted">Öğretmen Kontrol Paneli - Eğitim Yönetimi</p>
                 </div>
             </div>
         </div>
@@ -21,139 +21,75 @@
         <div class="row">
             <!-- Sol Kolon - Paket Yönetimi -->
             <div class="col-md-8">
-                <div class="card shadow-sm mb-4">
-                    <div class="card-header bg-primary text-white">
+                <!-- İstatistik Kartı -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="stat-card modern">
+                            <div class="stat-icon-wrapper">
+                                <div class="stat-icon bg-gradient-primary">
+                                    <i class="fas fa-users"></i>
+                    </div>
+                                    </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">@ViewBag.StudentCount</h3>
+                                <p class="stat-label">Toplam Öğrenci</p>
+                                <div class="stat-trend">
+                                    <i class="fas fa-arrow-up text-success"></i>
+                                    <span class="text-success">Aktif</span>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                    <div class="col-md-6">
+                        <div class="stat-card modern">
+                            <div class="stat-icon-wrapper">
+                                <div class="stat-icon bg-gradient-success">
+                                    <i class="fas fa-envelope"></i>
+                            </div>
+                                    </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number" id="messageCount">0</h3>
+                                <p class="stat-label">Yeni Mesaj</p>
+                                <div class="stat-trend">
+                                    <i class="fas fa-clock text-warning"></i>
+                                    <span class="text-warning">Bekleyen</span>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                <!-- Paket Yönetimi -->
+                <div class="card shadow-lg border-0 mb-4">
+                    <div class="card-header bg-gradient-primary text-white border-0">
                         <h5 class="mb-0">
                             <i class="fas fa-box-open me-2"></i>
                             Eğitim Paketleri Yönetimi
                         </h5>
-                    </div>
+                                    </div>
                     <div class="card-body">
-                        <div class="row">
-                            <!-- LGS Paketi -->
-                            <div class="col-md-4 mb-3">
-                                <div class="package-card lgs-card">
-                                    <div class="package-header">
-                                        <h6 class="package-title">LGS Paketi</h6>
-                                        <span class="package-badge">8. Sınıf</span>
-                                    </div>
-                                    <div class="package-content">
-                                        <p class="package-desc">Lise Giriş Sınavı hazırlık paketi</p>
-                                        <div class="package-stats">
-                                            <small class="text-muted">
-                                                <i class="fas fa-users"></i> 15 Öğrenci
-                                            </small>
-                                        </div>
-                                    </div>
-                                    <div class="package-actions">
-                                        <button class="btn btn-sm btn-outline-primary me-2" onclick="editPackage('lgs')">
-                                            <i class="fas fa-edit"></i> Düzenle
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-success" onclick="viewStudents('lgs')">
-                                            <i class="fas fa-users"></i> Öğrenciler
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- TYT Paketi -->
-                            <div class="col-md-4 mb-3">
-                                <div class="package-card tyt-card">
-                                    <div class="package-header">
-                                        <h6 class="package-title">TYT Paketi</h6>
-                                        <span class="package-badge">11-12. Sınıf</span>
-                                    </div>
-                                    <div class="package-content">
-                                        <p class="package-desc">Temel Yeterlilik Testi hazırlık</p>
-                                        <div class="package-stats">
-                                            <small class="text-muted">
-                                                <i class="fas fa-users"></i> 23 Öğrenci
-                                            </small>
-                                        </div>
-                                    </div>
-                                    <div class="package-actions">
-                                        <button class="btn btn-sm btn-outline-primary me-2" onclick="editPackage('tyt')">
-                                            <i class="fas fa-edit"></i> Düzenle
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-success" onclick="viewStudents('tyt')">
-                                            <i class="fas fa-users"></i> Öğrenciler
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- AYT Paketi -->
-                            <div class="col-md-4 mb-3">
-                                <div class="package-card ayt-card">
-                                    <div class="package-header">
-                                        <h6 class="package-title">AYT Paketi</h6>
-                                        <span class="package-badge">12. Sınıf</span>
-                                    </div>
-                                    <div class="package-content">
-                                        <p class="package-desc">Alan Yeterlilik Testi hazırlık</p>
-                                        <div class="package-stats">
-                                            <small class="text-muted">
-                                                <i class="fas fa-users"></i> 18 Öğrenci
-                                            </small>
-                                        </div>
-                                    </div>
-                                    <div class="package-actions">
-                                        <button class="btn btn-sm btn-outline-primary me-2" onclick="editPackage('ayt')">
-                                            <i class="fas fa-edit"></i> Düzenle
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-success" onclick="viewStudents('ayt')">
-                                            <i class="fas fa-users"></i> Öğrenciler
-                                        </button>
-                                    </div>
-                                </div>
+                        <div class="row" id="packageContainer">
+                            <div class="text-center p-4">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p class="mt-2">Paketler yükleniyor...</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- İstatistikler -->
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="stat-card">
-                            <div class="stat-icon bg-success">
-                                <i class="fas fa-users"></i>
+                <!-- Talep Yönetimi -->
+                <div class="card shadow-lg border-0 mb-4">
+                    <div class="card-header bg-gradient-warning text-white border-0">
+                        <h5 class="mb-0">
+                            <i class="fas fa-clipboard-list me-2"></i>
+                            Bekleyen Talepler
+                        </h5>
                             </div>
-                            <div class="stat-content">
-                                <h3>56</h3>
-                                <p>Toplam Öğrenci</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-card">
-                            <div class="stat-icon bg-info">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="stat-content">
-                                <h3>12</h3>
-                                <p>Yeni Mesaj</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-card">
-                            <div class="stat-icon bg-warning">
-                                <i class="fas fa-tasks"></i>
-                            </div>
-                            <div class="stat-content">
-                                <h3>8</h3>
-                                <p>Aktif Test</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-card">
-                            <div class="stat-icon bg-danger">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="stat-content">
-                                <h3>%94</h3>
-                                <p>Başarı Oranı</p>
+                    <div class="card-body">
+                        <div id="requestsContainer">
+                            <div class="text-center p-4">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p class="mt-2">Talepler yükleniyor...</p>
                             </div>
                         </div>
                     </div>
@@ -162,8 +98,8 @@
 
             <!-- Sağ Kolon - Mesajlaşma -->
             <div class="col-md-4">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-success text-white">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-gradient-success text-white border-0">
                         <h5 class="mb-0">
                             <i class="fas fa-comments me-2"></i>
                             Öğrenci Mesajları
@@ -177,26 +113,26 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <div class="row">
-                            <div class="col-md-8 mb-2">
+                    <div class="card-footer bg-light border-0">
+                        <div class="row g-2">
+                            <div class="col-12">
                                 <div class="input-group">
                                     <select class="form-select form-select-sm" id="replyToStudent">
                                         <option value="">Öğrenci Seçin</option>
                                     </select>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-2">
-                                <button class="btn btn-primary btn-sm w-100" onclick="showReplyModal()">
+                                    <button class="btn btn-primary btn-sm" onclick="showReplyModal()">
                                     <i class="fas fa-reply me-1"></i>
                                     Mesaj Gönder
                                 </button>
                             </div>
                         </div>
+                            <div class="col-12">
                         <button class="btn btn-success btn-sm w-100" onclick="loadMessages()">
                             <i class="fas fa-refresh me-2"></i>
                             Mesajları Yenile
                         </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -207,8 +143,8 @@
 <!-- Öğrenci Sohbet Modal -->
 <div class="modal fade" id="studentChatModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header bg-gradient-primary text-white border-0">
                 <h5 class="modal-title">
                     <i class="fas fa-comments me-2"></i>
                     <span id="chatStudentName">Öğrenci Sohbeti</span>
@@ -225,8 +161,8 @@
                 </div>
                 
                 <!-- Mesaj Gönderme Alanı -->
-                <div class="chat-input-area p-3 border-top">
-                    <div class="row">
+                <div class="chat-input-area p-3 border-top bg-white">
+                    <div class="row g-2">
                         <div class="col-md-3">
                             <select class="form-select form-select-sm" id="chatMessageSubject">
                                 <option value="Genel Cevap">Genel Cevap</option>
@@ -253,11 +189,60 @@
     </div>
 </div>
 
+<!-- Mesaj Gönderme Modal -->
+<div class="modal fade" id="replyModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header bg-gradient-primary text-white border-0">
+                <h5 class="modal-title">
+                    <i class="fas fa-paper-plane me-2"></i>
+                    Öğrenciye Mesaj Gönder
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="teacherMessageForm">
+                    <div class="mb-3">
+                        <label for="teacherMessageStudent" class="form-label">Öğrenci</label>
+                        <select class="form-select" id="teacherMessageStudent" required>
+                            <option value="">Öğrenci Seçin</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="teacherMessageSubject" class="form-label">Konu</label>
+                        <select class="form-select" id="teacherMessageSubject" required>
+                            <option value="">Konu Seçin</option>
+                            <option value="LGS Konuları">LGS Konuları</option>
+                            <option value="TYT Konuları">TYT Konuları</option>
+                            <option value="AYT Konuları">AYT Konuları</option>
+                            <option value="Genel Bilgi">Genel Bilgi</option>
+                            <option value="Teknik Destek">Teknik Destek</option>
+                            <option value="Diğer">Diğer</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="teacherMessageContent" class="form-label">Mesajınız</label>
+                        <textarea class="form-control" id="teacherMessageContent" rows="4" 
+                                placeholder="Mesajınızı buraya yazın..." required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                <button type="button" class="btn btn-primary" onclick="sendTeacherMessage()">
+                    <i class="fas fa-paper-plane me-2"></i>
+                    Mesajı Gönder
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Paket Düzenleme Modal -->
 <div class="modal fade" id="packageEditModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header bg-warning text-dark">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header bg-gradient-warning text-dark border-0">
                 <h5 class="modal-title">
                     <i class="fas fa-edit me-2"></i>
                     <span id="packageEditTitle">Paket Düzenle</span>
@@ -321,7 +306,7 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer border-0">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
                 <button type="button" class="btn btn-warning" onclick="savePackage()">
                     <i class="fas fa-save me-2"></i>
@@ -332,50 +317,27 @@
     </div>
 </div>
 
-<!-- Mesaj Gönderme Modal -->
-<div class="modal fade" id="replyModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
+<!-- Öğrenci Listesi Modal -->
+<div class="modal fade" id="studentsListModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header bg-gradient-info text-white border-0">
                 <h5 class="modal-title">
-                    <i class="fas fa-paper-plane me-2"></i>
-                    Öğrenciye Mesaj Gönder
+                    <i class="fas fa-users me-2"></i>
+                    <span id="studentsListTitle">Paket Öğrencileri</span>
                 </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <form id="teacherMessageForm">
-                    <div class="mb-3">
-                        <label for="teacherMessageStudent" class="form-label">Öğrenci</label>
-                        <select class="form-select" id="teacherMessageStudent" required>
-                            <option value="">Öğrenci Seçin</option>
-                        </select>
+                <div id="studentsListContainer">
+                    <div class="text-center p-4">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p class="mt-2">Öğrenciler yükleniyor...</p>
                     </div>
-                    <div class="mb-3">
-                        <label for="teacherMessageSubject" class="form-label">Konu</label>
-                        <select class="form-select" id="teacherMessageSubject" required>
-                            <option value="">Konu Seçin</option>
-                            <option value="LGS Konuları">LGS Konuları</option>
-                            <option value="TYT Konuları">TYT Konuları</option>
-                            <option value="AYT Konuları">AYT Konuları</option>
-                            <option value="Genel Bilgi">Genel Bilgi</option>
-                            <option value="Teknik Destek">Teknik Destek</option>
-                            <option value="Diğer">Diğer</option>
-                        </select>
                     </div>
-                    <div class="mb-3">
-                        <label for="teacherMessageContent" class="form-label">Mesajınız</label>
-                        <textarea class="form-control" id="teacherMessageContent" rows="4" 
-                                placeholder="Mesajınızı buraya yazın..." required></textarea>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
-                <button type="button" class="btn btn-primary" onclick="sendTeacherMessage()">
-                    <i class="fas fa-paper-plane me-2"></i>
-                    Mesajı Gönder
-                </button>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
             </div>
         </div>
     </div>
@@ -383,7 +345,7 @@
 
 <style>
 .teacher-dashboard {
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     padding: 20px;
     margin: 0;
@@ -394,52 +356,150 @@
 .welcome-header {
     text-align: center;
     margin-bottom: 30px;
+    color: white;
 }
 
 .dashboard-title {
+    color: white;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.stat-card.modern {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card.modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.stat-card.modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+}
+
+.stat-icon-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    margin-right: 15px;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3) !important;
+}
+
+.bg-gradient-success {
+    background: linear-gradient(45deg, #28a745, #1e7e34) !important;
+}
+
+.stat-content {
+    flex-grow: 1;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
     color: #2c3e50;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.stat-label {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.stat-trend {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
     font-weight: 600;
 }
 
+.stat-trend i {
+    margin-right: 5px;
+}
+
 .package-card {
-    border: 1px solid #e9ecef;
-    border-radius: 10px;
-    padding: 20px;
     background: white;
-    transition: all 0.3s;
-    height: 200px;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: none;
+    height: 280px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
 }
+
+.package-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.package-card.lgs-card::before { background: linear-gradient(45deg, #28a745, #20c997); }
+.package-card.tyt-card::before { background: linear-gradient(45deg, #007bff, #0056b3); }
+.package-card.ayt-card::before { background: linear-gradient(45deg, #dc3545, #c82333); }
 
 .package-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
-
-.lgs-card { border-left: 4px solid #28a745; }
-.tyt-card { border-left: 4px solid #007bff; }
-.ayt-card { border-left: 4px solid #dc3545; }
 
 .package-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .package-title {
-    font-weight: 600;
+    font-weight: 700;
     color: #2c3e50;
     margin: 0;
+    font-size: 1.2rem;
 }
 
 .package-badge {
-    background: #6c757d;
+    background: linear-gradient(45deg, #6c757d, #495057);
     color: white;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 0.8em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 .package-content {
@@ -448,56 +508,69 @@
 
 .package-desc {
     color: #6c757d;
-    font-size: 0.9em;
-    margin-bottom: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.package-stats {
+    margin-bottom: 20px;
+}
+
+.package-stats small {
+    display: flex;
+    align-items: center;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.package-stats i {
+    margin-right: 8px;
+    color: #28a745;
 }
 
 .package-actions {
     margin-top: auto;
-}
-
-.stat-card {
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-}
-
-.stat-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px;
-    font-size: 24px;
-    color: white;
+    gap: 10px;
 }
 
-.stat-content h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #2c3e50;
-    margin-bottom: 5px;
-}
-
-.stat-content p {
-    color: #6c757d;
-    margin: 0;
+.package-actions .btn {
+    flex: 1;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 8px 12px;
 }
 
 .message-item {
     display: flex;
+    align-items: flex-start;
     padding: 15px;
     border-bottom: 1px solid #e9ecef;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.message-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.message-item:last-child {
+    border-bottom: none;
 }
 
 .message-avatar {
     margin-right: 15px;
-    font-size: 24px;
+    width: 40px;
+    text-align: center;
+}
+
+.message-avatar i {
+    font-size: 1.5em;
+    color: #007bff;
 }
 
 .message-content {
@@ -507,22 +580,24 @@
 .message-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5px;
+    align-items: center;
+    margin-bottom: 8px;
 }
 
 .message-sender {
     font-weight: 600;
     color: #2c3e50;
+    font-size: 0.9rem;
 }
 
 .message-time {
     color: #6c757d;
-    font-size: 0.8em;
+    font-size: 0.8rem;
 }
 
 .message-text {
     color: #495057;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     margin: 0;
     line-height: 1.4;
 }
@@ -540,11 +615,12 @@
 /* Chat Message Styles */
 .chat-message-sent {
     max-width: 70%;
-    background-color: #007bff;
+    background: linear-gradient(45deg, #007bff, #0056b3);
     color: white;
     border-radius: 18px 18px 5px 18px;
-    padding: 10px 15px;
+    padding: 12px 16px;
     margin-left: auto;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.3);
 }
 
 .chat-message-received {
@@ -552,8 +628,9 @@
     background-color: #e9ecef;
     color: #212529;
     border-radius: 18px 18px 18px 5px;
-    padding: 10px 15px;
+    padding: 12px 16px;
     margin-right: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .chat-message-content p {
@@ -564,23 +641,100 @@
 .chat-message-time {
     opacity: 0.7;
     font-size: 0.75rem;
+    margin-top: 5px;
 }
 
 .chat-input-area {
     background-color: #fff;
 }
 
-.message-item {
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+.card {
+    border-radius: 15px;
+    overflow: hidden;
 }
 
-.message-item:hover {
-    background-color: #f8f9fa;
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+}
+
+.form-select, .form-control {
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+}
+
+.form-select:focus, .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+}
+
+.btn {
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 </style>
 
 <script>
+// Paketleri yükle
+function loadPackages() {
+    fetch('/Package/GetAll')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                renderPackages(data.data);
+            } else {
+                document.getElementById('packageContainer').innerHTML = '<div class="text-center p-4"><p class="text-danger">Paketler yüklenirken hata oluştu.</p></div>';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('packageContainer').innerHTML = '<div class="text-center p-4"><p class="text-danger">Paketler yüklenirken hata oluştu.</p></div>';
+        });
+}
+
+function renderPackages(packages) {
+    const container = document.getElementById('packageContainer');
+    let packagesHtml = '';
+    
+    packages.forEach(pkg => {
+        const packageClass = pkg.name.toLowerCase() + '-card';
+        
+        packagesHtml += `
+            <div class="col-md-4 mb-4">
+                <div class="package-card ${packageClass}">
+                    <div class="package-header">
+                        <h6 class="package-title">${pkg.name} Paketi</h6>
+                        <span class="package-badge">${pkg.grade}</span>
+                    </div>
+                    <div class="package-content">
+                        <p class="package-desc">${pkg.description}</p>
+                        <div class="package-stats">
+                            <small>
+                                <i class="fas fa-users"></i> ${pkg.studentCount || 0} Öğrenci
+                            </small>
+                        </div>
+                    </div>
+                    <div class="package-actions">
+                        <button class="btn btn-outline-primary" onclick="editPackage('${pkg.name.toLowerCase()}')">
+                            <i class="fas fa-edit"></i> Düzenle
+                        </button>
+                        <button class="btn btn-outline-success" onclick="viewStudents('${pkg.name.toLowerCase()}')">
+                            <i class="fas fa-users"></i> Öğrenciler
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = packagesHtml;
+}
+
 function editPackage(packageType) {
     // Paket tipine göre ID belirle
     let packageId;
@@ -596,15 +750,226 @@ function editPackage(packageType) {
 }
 
 function viewStudents(packageType) {
-    alert(`${packageType.toUpperCase()} paketindeki öğrenciler listeleneeck`);
+    // Paket tipine göre ID belirle
+    let packageId;
+    switch(packageType.toLowerCase()) {
+        case 'lgs': packageId = 1; break;
+        case 'tyt': packageId = 2; break;
+        case 'ayt': packageId = 3; break;
+        default: return;
+    }
+    
+    // Öğrenci listesini yükle
+    loadPackageStudents(packageId, packageType.toUpperCase());
 }
 
-// Mesajları yükle
-function loadMessages() {
-    fetch('/Message/GetMessages')
+// Paket yönetimi fonksiyonları
+function loadPackageData(packageId) {
+    fetch(`/Package/GetById?id=${packageId}`)
         .then(response => response.json())
         .then(data => {
-            const messageList = document.getElementById('messageList');
+            if (data.success) {
+                const pkg = data.data;
+                
+                // Modal başlığını güncelle
+                document.getElementById('packageEditTitle').textContent = `${pkg.name} Paketi Düzenle`;
+                
+                // Form alanlarını doldur
+                document.getElementById('packageId').value = pkg.id;
+                document.getElementById('packageDescription').value = pkg.description;
+                document.getElementById('packagePrice').value = pkg.price;
+                document.getElementById('packageVideoCount').value = pkg.videoCount;
+                document.getElementById('packageTestCount').value = pkg.testCount;
+                document.getElementById('packageDuration').value = pkg.durationMonths;
+                document.getElementById('packageIsActive').checked = pkg.isActive;
+                
+                // Özellikleri yükle
+                loadPackageFeatures(pkg.features, pkg.name);
+                
+                // Modal'ı aç
+                new bootstrap.Modal(document.getElementById('packageEditModal')).show();
+            } else {
+                alert('Paket bilgileri yüklenirken hata oluştu: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Paket bilgileri yüklenirken hata oluştu!');
+        });
+}
+
+function loadPackageFeatures(featuresJson, packageName) {
+    const featuresContainer = document.getElementById('packageFeatures');
+    let features;
+    
+    try {
+        features = JSON.parse(featuresJson || '{}');
+    } catch (e) {
+        features = {};
+    }
+    
+    // Paket tipine göre özellik listesi
+    let availableFeatures = {};
+    
+    switch(packageName.toUpperCase()) {
+        case 'LGS':
+            availableFeatures = {
+                'matematik': 'Matematik',
+                'turkce': 'Türkçe',
+                'fen': 'Fen Bilimleri',
+                'sosyal': 'Sosyal Bilgiler',
+                'ingilizce': 'İngilizce'
+            };
+            break;
+        case 'TYT':
+            availableFeatures = {
+                'matematik': 'Matematik',
+                'turkce': 'Türkçe',
+                'fen': 'Fen Bilimleri',
+                'sosyal': 'Sosyal Bilimler'
+            };
+            break;
+        case 'AYT':
+            availableFeatures = {
+                'matematik': 'Matematik',
+                'fizik': 'Fizik',
+                'kimya': 'Kimya',
+                'biyoloji': 'Biyoloji'
+            };
+            break;
+    }
+    
+    let featuresHtml = '';
+    for (const [key, label] of Object.entries(availableFeatures)) {
+        const isChecked = features[key] ? 'checked' : '';
+        featuresHtml += `
+            <div class="col-md-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="feature_${key}" ${isChecked}>
+                    <label class="form-check-label" for="feature_${key}">
+                        ${label}
+                    </label>
+                </div>
+            </div>
+        `;
+    }
+    
+    featuresContainer.innerHTML = featuresHtml;
+}
+
+function savePackage() {
+    const packageId = document.getElementById('packageId').value;
+    const description = document.getElementById('packageDescription').value;
+    const price = parseFloat(document.getElementById('packagePrice').value);
+    const videoCount = parseInt(document.getElementById('packageVideoCount').value);
+    const testCount = parseInt(document.getElementById('packageTestCount').value);
+    const duration = parseInt(document.getElementById('packageDuration').value);
+    const isActive = document.getElementById('packageIsActive').checked;
+    
+    // Özellikleri topla
+    const features = {};
+    const featureInputs = document.querySelectorAll('#packageFeatures input[type="checkbox"]');
+    featureInputs.forEach(input => {
+        const key = input.id.replace('feature_', '');
+        features[key] = input.checked;
+    });
+    
+    const packageData = {
+        id: parseInt(packageId),
+        description: description,
+        price: price,
+        videoCount: videoCount,
+        testCount: testCount,
+        durationMonths: duration,
+        features: JSON.stringify(features),
+        isActive: isActive
+    };
+    
+    // API'ye gönder
+    fetch('/Package/Update', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(packageData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Paket başarıyla güncellendi!');
+            
+            // Modal'ı kapat
+            bootstrap.Modal.getInstance(document.getElementById('packageEditModal')).hide();
+            
+            // Paketleri yeniden yükle
+            loadPackages();
+        } else {
+            alert('Paket güncellenirken hata oluştu: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Paket güncellenirken hata oluştu!');
+    });
+}
+
+function loadPackageStudents(packageId, packageName) {
+    // Modal başlığını güncelle
+    document.getElementById('studentsListTitle').textContent = `${packageName} Paketi Öğrencileri`;
+    
+    // Öğrenci listesini yükle
+    fetch(`/Package/GetStudents?packageId=${packageId}`)
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('studentsListContainer');
+            
+            if (data.success && data.data.length > 0) {
+                let studentsHtml = '<div class="row">';
+                
+                data.data.forEach(student => {
+                    studentsHtml += `
+                        <div class="col-md-6 mb-3">
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar me-3">
+                                            <i class="fas fa-user-circle text-primary" style="font-size: 2rem;"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">${student.name}</h6>
+                                            <small class="text-muted">${student.email}</small>
+                                            <div class="mt-2">
+                                                <span class="badge bg-success">Aktif</span>
+                                                <small class="text-muted ms-2">${student.activatedAt}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                studentsHtml += '</div>';
+                container.innerHTML = studentsHtml;
+            } else {
+                container.innerHTML = '<div class="text-center p-4"><p class="text-muted">Bu paket için henüz öğrenci bulunmuyor.</p></div>';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('studentsListContainer').innerHTML = '<div class="text-center p-4"><p class="text-danger">Öğrenciler yüklenirken hata oluştu.</p></div>';
+        });
+    
+    // Modal'ı aç
+    new bootstrap.Modal(document.getElementById('studentsListModal')).show();
+}
+
+// Öğrenci listesini yükle
+function loadStudents() {
+    fetch('/Message/GetStudents')
+        .then(response => response.json())
+        .then(data => {
             const replyToStudent = document.getElementById('replyToStudent');
             const teacherMessageStudent = document.getElementById('teacherMessageStudent');
             
@@ -613,41 +978,7 @@ function loadMessages() {
             teacherMessageStudent.innerHTML = '<option value="">Öğrenci Seçin</option>';
             
             if (data.success && data.data.length > 0) {
-                let messagesHtml = '';
-                const students = new Set();
-                
-                data.data.forEach(message => {
-                    // Öğrenci listesini topla
-                    if (!message.isSentByMe) {
-                        students.add(JSON.stringify({id: message.senderId, name: message.senderName}));
-                    } else {
-                        students.add(JSON.stringify({id: message.receiverId, name: message.receiverName}));
-                    }
-                    
-                    // Mesaj HTML'i oluştur
-                    const messageClass = message.isSentByMe ? 'sent-message' : 'received-message';
-                    const messageIcon = message.isSentByMe ? 'fas fa-paper-plane text-success' : 'fas fa-user-circle text-primary';
-                    
-                    messagesHtml += `
-                        <div class="message-item ${messageClass}" onclick="openStudentChat(${message.isSentByMe ? message.receiverId : message.senderId}, '${message.isSentByMe ? message.receiverName : message.senderName}')">
-                            <div class="message-avatar">
-                                <i class="${messageIcon}"></i>
-                            </div>
-                            <div class="message-content">
-                                <div class="message-header">
-                                    <span class="message-sender">${message.isSentByMe ? 'Siz → ' + message.receiverName : message.senderName}</span>
-                                    <span class="message-time">${message.sentAt}</span>
-                                    ${!message.isRead && !message.isSentByMe ? '<span class="badge bg-danger ms-2">Yeni</span>' : ''}
-                                </div>
-                                <p class="message-text">${message.content.substring(0, 100)}${message.content.length > 100 ? '...' : ''}</p>
-                            </div>
-                        </div>
-                    `;
-                });
-                
-                // Öğrenci seçeneklerini ekle
-                students.forEach(studentStr => {
-                    const student = JSON.parse(studentStr);
+                data.data.forEach(student => {
                     const option1 = document.createElement('option');
                     option1.value = student.id;
                     option1.textContent = student.name;
@@ -658,10 +989,60 @@ function loadMessages() {
                     option2.textContent = student.name;
                     teacherMessageStudent.appendChild(option2);
                 });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+// Mesajları yükle
+function loadMessages() {
+    fetch('/Message/GetMessages')
+        .then(response => response.json())
+        .then(data => {
+            const messageList = document.getElementById('messageList');
+            
+            if (data.success && data.data.length > 0) {
+                let messagesHtml = '';
+                let unreadCount = 0;
+                
+                data.data.forEach(message => {
+                    // Okunmamış mesaj sayısını say
+                    if (!message.isRead && !message.isSentByMe) {
+                        unreadCount++;
+                    }
+                    
+                    // Mesaj HTML'i oluştur
+                    const messageClass = message.isSentByMe ? 'sent-message' : 'received-message';
+                    const messageIcon = message.isSentByMe ? 'fas fa-paper-plane text-success' : 'fas fa-user-circle text-primary';
+                    const studentId = message.isSentByMe ? message.receiverId : message.senderId;
+                    const studentName = message.isSentByMe ? message.receiverName : message.senderName;
+                    
+                    messagesHtml += `
+                        <div class="message-item ${messageClass}" onclick="openStudentChat(${studentId}, '${studentName}')">
+                            <div class="message-avatar">
+                                <i class="${messageIcon}"></i>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <span class="message-sender">${message.isSentByMe ? 'Siz → ' + studentName : studentName}</span>
+                                    <span class="message-time">${message.sentAt}</span>
+                                    ${!message.isRead && !message.isSentByMe ? '<span class="badge bg-danger ms-2">Yeni</span>' : ''}
+                                </div>
+                                <p class="message-text">${message.content.substring(0, 100)}${message.content.length > 100 ? '...' : ''}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                // Mesaj sayısını güncelle
+                document.getElementById('messageCount').textContent = unreadCount;
                 
                 messageList.innerHTML = messagesHtml || '<div class="text-center p-4"><p class="text-muted">Henüz mesaj bulunmuyor.</p></div>';
             } else {
                 messageList.innerHTML = '<div class="text-center p-4"><p class="text-muted">Henüz mesaj bulunmuyor.</p></div>';
+                document.getElementById('messageCount').textContent = '0';
             }
         })
         .catch(error => {
@@ -862,12 +1243,111 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Sayfa yüklendiğinde mesajları yükle
+// Talep yönetimi fonksiyonları
+function loadRequests() {
+    fetch('/Package/GetPendingRequests')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                renderRequests(data.data);
+            } else {
+                document.getElementById('requestsContainer').innerHTML = '<div class="text-center p-4"><p class="text-danger">Talepler yüklenirken hata oluştu.</p></div>';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('requestsContainer').innerHTML = '<div class="text-center p-4"><p class="text-danger">Talepler yüklenirken hata oluştu.</p></div>';
+        });
+}
+
+function renderRequests(requests) {
+    const container = document.getElementById('requestsContainer');
+    
+    if (requests.length === 0) {
+        container.innerHTML = '<div class="text-center p-4"><p class="text-muted">Bekleyen talep bulunmuyor.</p></div>';
+        return;
+    }
+    
+    let requestsHtml = '';
+    
+    requests.forEach(request => {
+        requestsHtml += `
+            <div class="request-item mb-3 p-3 border rounded">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h6 class="mb-1">${request.studentName}</h6>
+                        <p class="text-muted mb-1">${request.studentEmail}</p>
+                        <p class="mb-1"><strong>Paket:</strong> ${request.packageName} (${request.packageGrade})</p>
+                        <small class="text-muted">Talep Tarihi: ${request.requestedAt}</small>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <button class="btn btn-success btn-sm me-2" onclick="respondToRequest(${request.id}, 'Approved')">
+                            <i class="fas fa-check me-1"></i>Onayla
+                        </button>
+                        <button class="btn btn-danger btn-sm" onclick="respondToRequest(${request.id}, 'Rejected')">
+                            <i class="fas fa-times me-1"></i>Reddet
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = requestsHtml;
+}
+
+function respondToRequest(requestId, status) {
+    const message = status === 'Approved' ? 'Talebi onaylamak istediğinizden emin misiniz?' : 'Talebi reddetmek istediğinizden emin misiniz?';
+    
+    if (!confirm(message)) {
+        return;
+    }
+    
+    fetch('/Package/RespondToRequest', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ 
+            requestId: requestId, 
+            status: status, 
+            message: status === 'Approved' ? 'Talebiniz onaylandı!' : 'Talebiniz reddedildi.' 
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert(data.message);
+            loadRequests(); // Talepleri yeniden yükle
+        } else {
+            alert('İşlem başarısız: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('İşlem sırasında hata oluştu!');
+    });
+}
+
+// Sayfa yüklendiğinde
 document.addEventListener('DOMContentLoaded', function() {
+    // Paketleri yükle
+    loadPackages();
+    
+    // Öğrenci listesini yükle
+    loadStudents();
+    
+    // Talepleri yükle
+    loadRequests();
+    
+    // Mesajları yükle
     loadMessages();
     
-    // Her 5 saniyede bir mesajları yenile (daha hızlı)
+    // Her 5 saniyede bir mesajları yenile
     setInterval(loadMessages, 5000);
+    
+    // Her 10 saniyede bir talepleri yenile
+    setInterval(loadRequests, 10000);
     
     // Eğer sohbet açıksa, sohbeti de yenile
     setInterval(function() {
@@ -876,156 +1356,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, 3000);
 });
-
-// Paket yönetimi fonksiyonları
-function loadPackageData(packageId) {
-    fetch(`/Package/GetById?id=${packageId}`)
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                const pkg = data.data;
-                
-                // Modal başlığını güncelle
-                document.getElementById('packageEditTitle').textContent = `${pkg.name} Paketi Düzenle`;
-                
-                // Form alanlarını doldur
-                document.getElementById('packageId').value = pkg.id;
-                document.getElementById('packageDescription').value = pkg.description;
-                document.getElementById('packagePrice').value = pkg.price;
-                document.getElementById('packageVideoCount').value = pkg.videoCount;
-                document.getElementById('packageTestCount').value = pkg.testCount;
-                document.getElementById('packageDuration').value = pkg.durationMonths;
-                document.getElementById('packageIsActive').checked = pkg.isActive;
-                
-                // Özellikleri yükle
-                loadPackageFeatures(pkg.features, pkg.name);
-                
-                // Modal'ı aç
-                new bootstrap.Modal(document.getElementById('packageEditModal')).show();
-            } else {
-                alert('Paket bilgileri yüklenirken hata oluştu: ' + data.message);
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Paket bilgileri yüklenirken hata oluştu!');
-        });
-}
-
-function loadPackageFeatures(featuresJson, packageName) {
-    const featuresContainer = document.getElementById('packageFeatures');
-    let features;
-    
-    try {
-        features = JSON.parse(featuresJson || '{}');
-    } catch (e) {
-        features = {};
-    }
-    
-    // Paket tipine göre özellik listesi
-    let availableFeatures = {};
-    
-    switch(packageName.toUpperCase()) {
-        case 'LGS':
-            availableFeatures = {
-                'matematik': 'Matematik',
-                'turkce': 'Türkçe',
-                'fen': 'Fen Bilimleri',
-                'sosyal': 'Sosyal Bilgiler',
-                'ingilizce': 'İngilizce'
-            };
-            break;
-        case 'TYT':
-            availableFeatures = {
-                'matematik': 'Matematik',
-                'turkce': 'Türkçe',
-                'fen': 'Fen Bilimleri',
-                'sosyal': 'Sosyal Bilimler'
-            };
-            break;
-        case 'AYT':
-            availableFeatures = {
-                'matematik': 'Matematik',
-                'fizik': 'Fizik',
-                'kimya': 'Kimya',
-                'biyoloji': 'Biyoloji'
-            };
-            break;
-    }
-    
-    let featuresHtml = '';
-    for (const [key, label] of Object.entries(availableFeatures)) {
-        const isChecked = features[key] ? 'checked' : '';
-        featuresHtml += `
-            <div class="col-md-6">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="feature_${key}" ${isChecked}>
-                    <label class="form-check-label" for="feature_${key}">
-                        ${label}
-                    </label>
-                </div>
-            </div>
-        `;
-    }
-    
-    featuresContainer.innerHTML = featuresHtml;
-}
-
-function savePackage() {
-    const packageId = document.getElementById('packageId').value;
-    const description = document.getElementById('packageDescription').value;
-    const price = parseFloat(document.getElementById('packagePrice').value);
-    const videoCount = parseInt(document.getElementById('packageVideoCount').value);
-    const testCount = parseInt(document.getElementById('packageTestCount').value);
-    const duration = parseInt(document.getElementById('packageDuration').value);
-    const isActive = document.getElementById('packageIsActive').checked;
-    
-    // Özellikleri topla
-    const features = {};
-    const featureInputs = document.querySelectorAll('#packageFeatures input[type="checkbox"]');
-    featureInputs.forEach(input => {
-        const key = input.id.replace('feature_', '');
-        features[key] = input.checked;
-    });
-    
-    const packageData = {
-        id: parseInt(packageId),
-        description: description,
-        price: price,
-        videoCount: videoCount,
-        testCount: testCount,
-        durationMonths: duration,
-        features: JSON.stringify(features),
-        isActive: isActive
-    };
-    
-    // API'ye gönder
-    fetch('/Package/Update', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(packageData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Paket başarıyla güncellendi!');
-            
-            // Modal'ı kapat
-            bootstrap.Modal.getInstance(document.getElementById('packageEditModal')).hide();
-            
-            // Sayfayı yenile (paket bilgilerini güncellemek için)
-            setTimeout(() => {
-                location.reload();
-            }, 1000);
-        } else {
-            alert('Paket güncellenirken hata oluştu: ' + data.message);
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('Paket güncellenirken hata oluştu!');
-    });
-}
 </script>

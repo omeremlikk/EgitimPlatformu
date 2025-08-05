@@ -13,6 +13,8 @@ namespace EgitimPlatformu.Data
         public DbSet<User> Users { get; set; } = null!;
         public DbSet<Message> Messages { get; set; } = null!;
         public DbSet<Package> Packages { get; set; } = null!;
+        public DbSet<UserPackage> UserPackages { get; set; } = null!;
+        public DbSet<PackageRequest> PackageRequests { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -44,6 +46,38 @@ namespace EgitimPlatformu.Data
         {
             entity.HasIndex(e => e.Name).IsUnique();
             entity.Property(e => e.Price).HasColumnType("decimal(18,2)");
+        });
+
+        // UserPackage Configuration
+        modelBuilder.Entity<UserPackage>(entity =>
+        {
+            entity.HasOne(up => up.User)
+                  .WithMany()
+                  .HasForeignKey(up => up.UserId)
+                  .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasOne(up => up.Package)
+                  .WithMany()
+                  .HasForeignKey(up => up.PackageId)
+                  .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasIndex(e => new { e.UserId, e.PackageId }).IsUnique();
+        });
+
+        // PackageRequest Configuration
+        modelBuilder.Entity<PackageRequest>(entity =>
+        {
+            entity.HasOne(pr => pr.User)
+                  .WithMany()
+                  .HasForeignKey(pr => pr.UserId)
+                  .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasOne(pr => pr.Package)
+                  .WithMany()
+                  .HasForeignKey(pr => pr.PackageId)
+                  .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasIndex(e => new { e.UserId, e.PackageId }).IsUnique();
         });
 
         // Seed Data

@@ -2,16 +2,20 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using EgitimPlatformu.Models;
+using EgitimPlatformu.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace EgitimPlatformu.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly AppDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, AppDbContext context)
     {
         _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
@@ -25,9 +29,17 @@ public class HomeController : Controller
     }
 
     [Authorize(Roles = "Teacher")]
-    public IActionResult TeacherDashboard()
+    public async Task<IActionResult> TeacherDashboard()
     {
         ViewBag.UserName = User.Identity?.Name;
+        
+        // Gerçek öğrenci sayısını al
+        var studentCount = await _context.Users
+            .Where(u => u.Role == "Student" && u.IsActive)
+            .CountAsync();
+        
+        ViewBag.StudentCount = studentCount;
+        
         return View();
     }
 

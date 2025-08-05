@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EgitimPlatformu")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4fd53152e379e7f6de7debd49afcaf2ba43dc1e2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eab067cb59ae9d75171c2a3c5ae3fe314e88bbec")]
 [assembly: System.Reflection.AssemblyProductAttribute("EgitimPlatformu")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EgitimPlatformu")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

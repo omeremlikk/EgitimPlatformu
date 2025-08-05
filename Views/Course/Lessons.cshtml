@@ -1,0 +1,290 @@
+@{
+    ViewData["Title"] = $"{ViewBag.Package.Name} Dersleri";
+    Layout = "_LayoutDashboard";
+}
+
+<div class="course-page">
+    <div class="container-fluid">
+        <!-- Header -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="course-header">
+                    <h1 class="course-title">
+                        <i class="fas fa-graduation-cap text-primary"></i>
+                        @ViewBag.Package.Name Dersleri
+                    </h1>
+                    <p class="text-muted">Hoş geldiniz, @ViewBag.UserName</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paket Bilgileri -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-gradient-primary text-white border-0">
+                        <h5 class="mb-0">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Paket Bilgileri
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="package-info">
+                            <p><strong>Paket:</strong> @ViewBag.Package.Name</p>
+                            <p><strong>Sınıf:</strong> @ViewBag.Package.Grade</p>
+                            <p><strong>Açıklama:</strong> @ViewBag.Package.Description</p>
+                            <p><strong>Video Sayısı:</strong> @ViewBag.Package.VideoCount</p>
+                            <p><strong>Test Sayısı:</strong> @ViewBag.Package.TestCount</p>
+                            <p><strong>Aktif Edilme:</strong> @ViewBag.UserPackage.ActivatedAt.ToString("dd.MM.yyyy")</p>
+                            <p><strong>Bitiş Tarihi:</strong> @ViewBag.UserPackage.ExpiresAt.ToString("dd.MM.yyyy")</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dersler -->
+            <div class="col-md-8">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-gradient-success text-white border-0">
+                        <h5 class="mb-0">
+                            <i class="fas fa-book me-2"></i>
+                            Dersler
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row" id="lessonsContainer">
+                            <!-- Dersler dinamik olarak yüklenecek -->
+                            <div class="text-center p-4">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p class="mt-2">Dersler yükleniyor...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.course-page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+    position: relative;
+}
+
+.course-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.course-title {
+    color: white;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.package-info p {
+    margin-bottom: 10px;
+    color: #495057;
+}
+
+.lesson-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: none;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.lesson-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #28a745, #20c997);
+}
+
+.lesson-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.lesson-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.lesson-title {
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.lesson-badge {
+    background: linear-gradient(45deg, #6c757d, #495057);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.lesson-content {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.lesson-stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.lesson-stat {
+    display: flex;
+    align-items: center;
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+
+.lesson-stat i {
+    margin-right: 8px;
+    color: #28a745;
+}
+
+.lesson-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.lesson-actions .btn {
+    flex: 1;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+}
+
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+}
+
+.btn {
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+</style>
+
+<script>
+// Dersleri yükle
+function loadLessons() {
+    const packageId = @ViewBag.Package.Id;
+    const packageName = '@ViewBag.Package.Name';
+    
+    // Temsili ders verileri
+    const lessons = getLessonsByPackage(packageName);
+    renderLessons(lessons);
+}
+
+function getLessonsByPackage(packageName) {
+    const lessonData = {
+        'LGS': [
+            { id: 1, title: 'Matematik - Temel Kavramlar', description: 'Sayılar, işlemler ve temel matematik kavramları', duration: '45 dk', videoCount: 3, testCount: 2, status: 'active' },
+            { id: 2, title: 'Türkçe - Dil Bilgisi', description: 'Dil bilgisi kuralları ve uygulamaları', duration: '40 dk', videoCount: 2, testCount: 1, status: 'active' },
+            { id: 3, title: 'Fen Bilimleri - Fizik', description: 'Fizik konuları ve problem çözümleri', duration: '50 dk', videoCount: 4, testCount: 3, status: 'locked' },
+            { id: 4, title: 'Sosyal Bilgiler - Tarih', description: 'Tarih konuları ve önemli olaylar', duration: '35 dk', videoCount: 2, testCount: 2, status: 'locked' }
+        ],
+        'TYT': [
+            { id: 1, title: 'Matematik - Temel Matematik', description: 'TYT matematik konuları ve çözümler', duration: '60 dk', videoCount: 5, testCount: 4, status: 'active' },
+            { id: 2, title: 'Türkçe - Anlam Bilgisi', description: 'Paragraf ve anlam bilgisi konuları', duration: '45 dk', videoCount: 3, testCount: 2, status: 'active' },
+            { id: 3, title: 'Fen Bilimleri - Kimya', description: 'Kimya konuları ve formüller', duration: '55 dk', videoCount: 4, testCount: 3, status: 'locked' },
+            { id: 4, title: 'Sosyal Bilimler - Coğrafya', description: 'Coğrafya konuları ve harita bilgisi', duration: '40 dk', videoCount: 2, testCount: 2, status: 'locked' }
+        ],
+        'AYT': [
+            { id: 1, title: 'Matematik - İleri Matematik', description: 'AYT matematik konuları ve çözümler', duration: '75 dk', videoCount: 6, testCount: 5, status: 'active' },
+            { id: 2, title: 'Fizik - Mekanik', description: 'Fizik mekanik konuları', duration: '65 dk', videoCount: 4, testCount: 3, status: 'active' },
+            { id: 3, title: 'Kimya - Organik Kimya', description: 'Organik kimya konuları', duration: '60 dk', videoCount: 5, testCount: 4, status: 'locked' },
+            { id: 4, title: 'Biyoloji - Hücre Bilimi', description: 'Hücre ve biyoloji konuları', duration: '50 dk', videoCount: 3, testCount: 2, status: 'locked' }
+        ]
+    };
+    
+    return lessonData[packageName] || [];
+}
+
+function renderLessons(lessons) {
+    const container = document.getElementById('lessonsContainer');
+    let lessonsHtml = '';
+    
+    lessons.forEach(lesson => {
+        const statusClass = lesson.status === 'active' ? 'btn-success' : 'btn-secondary';
+        const statusText = lesson.status === 'active' ? 'Başla' : 'Kilitli';
+        const statusIcon = lesson.status === 'active' ? 'fas fa-play' : 'fas fa-lock';
+        
+        lessonsHtml += `
+            <div class="col-md-6 mb-3">
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <h6 class="lesson-title">${lesson.title}</h6>
+                        <span class="lesson-badge">${lesson.duration}</span>
+                    </div>
+                    <div class="lesson-content">
+                        <p>${lesson.description}</p>
+                    </div>
+                    <div class="lesson-stats">
+                        <div class="lesson-stat">
+                            <i class="fas fa-video"></i>
+                            <span>${lesson.videoCount} Video</span>
+                        </div>
+                        <div class="lesson-stat">
+                            <i class="fas fa-file-alt"></i>
+                            <span>${lesson.testCount} Test</span>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <button class="btn ${statusClass} btn-sm" ${lesson.status === 'locked' ? 'disabled' : ''}>
+                            <i class="${statusIcon} me-2"></i>${statusText}
+                        </button>
+                        <button class="btn btn-outline-info btn-sm">
+                            <i class="fas fa-info-circle me-2"></i>Detay
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = lessonsHtml;
+}
+
+// Sayfa yüklendiğinde
+document.addEventListener('DOMContentLoaded', function() {
+    loadLessons();
+});
+</script> 
