@@ -66,7 +66,7 @@
                             <i class="fas fa-box-open me-2"></i>
                             Eğitim Paketleri Yönetimi
                         </h5>
-                                    </div>
+                    </div>
                     <div class="card-body">
                         <div class="row" id="packageContainer">
                             <div class="text-center p-4">
@@ -345,7 +345,7 @@
 
 <style>
 .teacher-dashboard {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
     padding: 20px;
     margin: 0;
@@ -356,29 +356,37 @@
 .welcome-header {
     text-align: center;
     margin-bottom: 30px;
-    color: white;
+    color: #2c3e50;
 }
 
 .dashboard-title {
-    color: white;
-    font-weight: 600;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: #2c3e50;
+    font-weight: 700;
+    text-shadow: none;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.dashboard-title i {
+    color: #3498db;
+    margin-right: 15px;
 }
 
 .stat-card.modern {
     background: white;
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
     border: none;
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .stat-card.modern:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
 .stat-card.modern::before {
@@ -388,33 +396,42 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(45deg, #667eea, #764ba2);
+    background: linear-gradient(45deg, #3498db, #2980b9);
 }
 
 .stat-icon-wrapper {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .stat-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 15px;
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 28px;
     color: white;
-    margin-right: 15px;
+    margin-right: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .bg-gradient-primary {
-    background: linear-gradient(45deg, #007bff, #0056b3) !important;
+    background: linear-gradient(45deg, #3498db, #2980b9) !important;
 }
 
 .bg-gradient-success {
-    background: linear-gradient(45deg, #28a745, #1e7e34) !important;
+    background: linear-gradient(45deg, #27ae60, #2ecc71) !important;
+}
+
+.bg-gradient-info {
+    background: linear-gradient(45deg, #17a2b8, #20c997) !important;
+}
+
+.bg-gradient-warning {
+    background: linear-gradient(45deg, #f39c12, #e67e22) !important;
 }
 
 .stat-content {
@@ -422,43 +439,44 @@
 }
 
 .stat-number {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 800;
     color: #2c3e50;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     line-height: 1;
 }
 
 .stat-label {
-    color: #6c757d;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    font-weight: 500;
+    color: #7f8c8d;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    font-weight: 600;
 }
 
 .stat-trend {
     display: flex;
     align-items: center;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 600;
 }
 
 .stat-trend i {
-    margin-right: 5px;
+    margin-right: 8px;
 }
 
 .package-card {
     background: white;
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
     border: none;
-    height: 280px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .package-card::before {
@@ -470,36 +488,37 @@
     height: 4px;
 }
 
-.package-card.lgs-card::before { background: linear-gradient(45deg, #28a745, #20c997); }
-.package-card.tyt-card::before { background: linear-gradient(45deg, #007bff, #0056b3); }
-.package-card.ayt-card::before { background: linear-gradient(45deg, #dc3545, #c82333); }
+.package-card.lgs-card::before { background: linear-gradient(45deg, #27ae60, #2ecc71); }
+.package-card.tyt-card::before { background: linear-gradient(45deg, #3498db, #2980b9); }
+.package-card.ayt-card::before { background: linear-gradient(45deg, #e74c3c, #c0392b); }
+.package-card.canliders-card::before { background: linear-gradient(45deg, #f39c12, #e67e22); }
 
 .package-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
 }
 
 .package-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .package-title {
-    font-weight: 700;
+    font-weight: 800;
     color: #2c3e50;
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .package-badge {
-    background: linear-gradient(45deg, #6c757d, #495057);
+    background: linear-gradient(45deg, #95a5a6, #7f8c8d);
     color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 700;
 }
 
 .package-content {
@@ -507,47 +526,49 @@
 }
 
 .package-desc {
-    color: #6c757d;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-    line-height: 1.5;
+    color: #7f8c8d;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-weight: 500;
 }
 
 .package-stats {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .package-stats small {
     display: flex;
     align-items: center;
-    color: #6c757d;
-    font-weight: 500;
+    color: #7f8c8d;
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 
 .package-stats i {
-    margin-right: 8px;
-    color: #28a745;
+    margin-right: 10px;
+    color: #27ae60;
 }
 
 .package-actions {
     margin-top: auto;
     display: flex;
-    gap: 10px;
+    gap: 12px;
 }
 
 .package-actions .btn {
     flex: 1;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    padding: 8px 12px;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 12px 16px;
 }
 
 .message-item {
     display: flex;
     align-items: flex-start;
-    padding: 15px;
-    border-bottom: 1px solid #e9ecef;
+    padding: 20px;
+    border-bottom: 2px solid #ecf0f1;
     cursor: pointer;
     transition: all 0.3s ease;
     background: white;
@@ -555,7 +576,7 @@
 
 .message-item:hover {
     background-color: #f8f9fa;
-    transform: translateX(5px);
+    transform: translateX(8px);
 }
 
 .message-item:last-child {
@@ -563,14 +584,14 @@
 }
 
 .message-avatar {
-    margin-right: 15px;
-    width: 40px;
+    margin-right: 20px;
+    width: 50px;
     text-align: center;
 }
 
 .message-avatar i {
-    font-size: 1.5em;
-    color: #007bff;
+    font-size: 1.8em;
+    color: #3498db;
 }
 
 .message-content {
@@ -581,56 +602,58 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .message-sender {
-    font-weight: 600;
+    font-weight: 700;
     color: #2c3e50;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .message-time {
-    color: #6c757d;
-    font-size: 0.8rem;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .message-text {
-    color: #495057;
-    font-size: 0.9rem;
+    color: #34495e;
+    font-size: 1rem;
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.5;
+    font-weight: 500;
 }
 
 .sent-message {
     background-color: #e3f2fd;
-    border-left: 4px solid #2196F3;
+    border-left: 4px solid #3498db;
 }
 
 .received-message {
     background-color: #f3e5f5;
-    border-left: 4px solid #9C27B0;
+    border-left: 4px solid #9c27b0;
 }
 
 /* Chat Message Styles */
 .chat-message-sent {
     max-width: 70%;
-    background: linear-gradient(45deg, #007bff, #0056b3);
+    background: linear-gradient(45deg, #3498db, #2980b9);
     color: white;
-    border-radius: 18px 18px 5px 18px;
-    padding: 12px 16px;
+    border-radius: 20px 20px 5px 20px;
+    padding: 15px 20px;
     margin-left: auto;
-    box-shadow: 0 2px 8px rgba(0,123,255,0.3);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
 }
 
 .chat-message-received {
     max-width: 70%;
-    background-color: #e9ecef;
-    color: #212529;
-    border-radius: 18px 18px 18px 5px;
-    padding: 12px 16px;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    border-radius: 20px 20px 20px 5px;
+    padding: 15px 20px;
     margin-right: auto;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .chat-message-content p {
@@ -640,8 +663,8 @@
 
 .chat-message-time {
     opacity: 0.7;
-    font-size: 0.75rem;
-    margin-top: 5px;
+    font-size: 0.8rem;
+    margin-top: 8px;
 }
 
 .chat-input-area {
@@ -649,33 +672,103 @@
 }
 
 .card {
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .card-header {
-    border-radius: 15px 15px 0 0 !important;
+    border-radius: 20px 20px 0 0 !important;
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
 .form-select, .form-control {
-    border-radius: 10px;
-    border: 1px solid #e9ecef;
+    border-radius: 15px;
+    border: 2px solid #ecf0f1;
+    font-weight: 500;
 }
 
 .form-select:focus, .form-control:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
 }
 
 .btn {
-    border-radius: 10px;
-    font-weight: 600;
+    border-radius: 15px;
+    font-weight: 700;
     transition: all 0.3s ease;
+    padding: 12px 24px;
+    font-size: 1rem;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.modal-content {
+    border-radius: 20px;
+}
+
+.modal-header {
+    border-radius: 20px 20px 0 0 !important;
+}
+
+.modal-footer {
+    border-radius: 0 0 20px 20px !important;
+}
+
+.request-item {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.request-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.request-item h6 {
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.request-item p {
+    color: #7f8c8d;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.request-item small {
+    color: #95a5a6;
+    font-weight: 500;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.form-check-label {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-check-input:checked {
+    background-color: #3498db;
+    border-color: #3498db;
 }
 </style>
 
@@ -702,7 +795,7 @@ function renderPackages(packages) {
     let packagesHtml = '';
     
     packages.forEach(pkg => {
-        const packageClass = pkg.name.toLowerCase() + '-card';
+        const packageClass = pkg.name.toLowerCase().replace(' ', '-') + '-card';
         
         packagesHtml += `
             <div class="col-md-4 mb-4">
@@ -742,6 +835,10 @@ function editPackage(packageType) {
         case 'lgs': packageId = 1; break;
         case 'tyt': packageId = 2; break;
         case 'ayt': packageId = 3; break;
+        case 'canlı ders':
+        case 'canli ders':
+        case 'canlıders':
+        case 'canliders': packageId = 4; break;
         default: return;
     }
     
@@ -756,6 +853,10 @@ function viewStudents(packageType) {
         case 'lgs': packageId = 1; break;
         case 'tyt': packageId = 2; break;
         case 'ayt': packageId = 3; break;
+        case 'canlı ders':
+        case 'canli ders':
+        case 'canlıders':
+        case 'canliders': packageId = 4; break;
         default: return;
     }
     
@@ -835,6 +936,13 @@ function loadPackageFeatures(featuresJson, packageName) {
                 'fizik': 'Fizik',
                 'kimya': 'Kimya',
                 'biyoloji': 'Biyoloji'
+            };
+            break;
+        case 'CANLI DERS':
+        case 'CANLİ DERS':
+            availableFeatures = {
+                'matematik': 'Matematik',
+                'canli_ders': 'Canlı Ders'
             };
             break;
     }
@@ -1297,35 +1405,79 @@ function renderRequests(requests) {
 }
 
 function respondToRequest(requestId, status) {
-    const message = status === 'Approved' ? 'Talebi onaylamak istediğinizden emin misiniz?' : 'Talebi reddetmek istediğinizden emin misiniz?';
+    const isApproved = status === 'Approved';
+    const title = isApproved ? 'Talebi Onayla' : 'Talebi Reddet';
+    const text = isApproved ? 'Bu talebi onaylamak istediğinizden emin misiniz?' : 'Bu talebi reddetmek istediğinizden emin misiniz?';
+    const icon = isApproved ? 'question' : 'warning';
+    const confirmButtonText = isApproved ? 'Onayla' : 'Reddet';
+    const confirmButtonColor = isApproved ? '#28a745' : '#dc3545';
     
-    if (!confirm(message)) {
-        return;
-    }
-    
-    fetch('/Package/RespondToRequest', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ 
-            requestId: requestId, 
-            status: status, 
-            message: status === 'Approved' ? 'Talebiniz onaylandı!' : 'Talebiniz reddedildi.' 
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert(data.message);
-            loadRequests(); // Talepleri yeniden yükle
-        } else {
-            alert('İşlem başarısız: ' + data.message);
+    Swal.fire({
+        title: title,
+        text: text,
+        icon: icon,
+        showCancelButton: true,
+        confirmButtonColor: confirmButtonColor,
+        cancelButtonColor: '#6c757d',
+        confirmButtonText: confirmButtonText,
+        cancelButtonText: 'İptal'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Loading göster
+            Swal.fire({
+                title: 'İşlem yapılıyor...',
+                text: 'Lütfen bekleyin',
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+            
+            const responseMessage = isApproved ? 'Talebiniz onaylandı!' : 'Talebiniz reddedildi.';
+            
+            console.log('Gönderilen veri:', { requestId, status, message: responseMessage });
+            
+            fetch(`/Package/RespondToRequest?requestId=${requestId}&status=${status}&message=${encodeURIComponent(responseMessage)}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]')?.value || ''
+                }
+            })
+            .then(response => {
+                console.log('Response status:', response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Response data:', data);
+                if (data.success) {
+                    Swal.fire({
+                        title: 'Başarılı!',
+                        text: data.message,
+                        icon: 'success',
+                        confirmButtonColor: '#28a745'
+                    }).then(() => {
+                        loadRequests(); // Talepleri yeniden yükle
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Hata!',
+                        text: 'İşlem başarısız: ' + data.message,
+                        icon: 'error',
+                        confirmButtonColor: '#dc3545'
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                Swal.fire({
+                    title: 'Hata!',
+                    text: 'İşlem sırasında hata oluştu!',
+                    icon: 'error',
+                    confirmButtonColor: '#dc3545'
+                });
+            });
         }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('İşlem sırasında hata oluştu!');
     });
 }
 

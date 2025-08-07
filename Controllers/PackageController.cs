@@ -24,6 +24,24 @@ namespace EgitimPlatformu.Controllers
             {
                 var packages = await _context.Packages
                     .OrderBy(p => p.Id)
+                    .Select(p => new
+                    {
+                        p.Id,
+                        p.Name,
+                        p.Description,
+                        p.Grade,
+                        p.Price,
+                        p.VideoCount,
+                        p.TestCount,
+                        p.DurationMonths,
+                        p.Features,
+                        p.IsActive,
+                        p.CreatedAt,
+                        p.UpdatedAt,
+                        p.ColorCode,
+                        p.IconClass,
+                        StudentCount = _context.UserPackages.Count(up => up.PackageId == p.Id && up.IsActive)
+                    })
                     .ToListAsync();
 
                 return Json(new { success = true, data = packages });
@@ -169,11 +187,34 @@ namespace EgitimPlatformu.Controllers
 
                 // Öğrencinin bu paket için zaten talep verip vermediğini kontrol et
                 var existingRequest = await _context.PackageRequests
-                    .FirstOrDefaultAsync(pr => pr.UserId == userId && pr.PackageId == request.PackageId);
+                    .Where(pr => pr.UserId == userId && pr.PackageId == request.PackageId)
+                    .OrderByDescending(pr => pr.RequestedAt)
+                    .FirstOrDefaultAsync();
 
                 if (existingRequest != null)
                 {
-                    return Json(new { success = false, message = "Bu paket için zaten talep vermişsiniz." });
+                    // Eğer talep hala bekliyorsa
+                    if (existingRequest.Status == "Pending")
+                    {
+                        return Json(new { success = false, message = "Bu paket için zaten talep vermişsiniz." });
+                    }
+                    
+                    // Eğer talep reddedildiyse, 1 saat geçip geçmediğini kontrol et
+                    if (existingRequest.Status == "Rejected")
+                    {
+                        var timeSinceRejection = DateTime.UtcNow - existingRequest.RespondedAt.Value;
+                        if (timeSinceRejection.TotalHours < 1)
+                        {
+                            var remainingMinutes = 60 - (int)timeSinceRejection.TotalMinutes;
+                            return Json(new { success = false, message = $"Bu paket için talebiniz reddedildi. {remainingMinutes} dakika sonra tekrar talep edebilirsiniz." });
+                        }
+                    }
+                    
+                    // Eğer talep onaylandıysa
+                    if (existingRequest.Status == "Approved")
+                    {
+                        return Json(new { success = false, message = "Bu paket zaten onaylanmış." });
+                    }
                 }
 
                 // Öğrencinin bu paketi zaten aktif edip etmediğini kontrol et
@@ -241,41 +282,63 @@ namespace EgitimPlatformu.Controllers
         {
             try
             {
-                var request = await _context.PackageRequests
-                    .Include(pr => pr.Package)
-                    .FirstOrDefaultAsync(pr => pr.Id == requestId);
+                // Gelen veriyi logla
+                Console.WriteLine($"RequestId: {requestId}, Status: {status}, Message: {message}");
 
-                if (request == null)
+                if (requestId <= 0)
                 {
-                    return Json(new { success = false, message = "Talep bulunamadı." });
+                    return Json(new { success = false, message = "Geçersiz talep ID." });
                 }
 
-                request.Status = status;
-                request.RespondedAt = DateTime.UtcNow;
-                request.ResponseMessage = message;
+                // Önce talep var mı kontrol et
+                var packageRequest = await _context.PackageRequests
+                    .FirstOrDefaultAsync(pr => pr.Id == requestId);
+
+                if (packageRequest == null)
+                {
+                    return Json(new { success = false, message = $"Talep bulunamadı. ID: {requestId}" });
+                }
+
+                // Talep durumunu güncelle
+                packageRequest.Status = status;
+                packageRequest.RespondedAt = DateTime.UtcNow;
+                packageRequest.ResponseMessage = message;
 
                 // Eğer onaylandıysa, öğrenci için paketi aktif et
                 if (status == "Approved")
                 {
-                    var userPackage = new UserPackage
-                    {
-                        UserId = request.UserId,
-                        PackageId = request.PackageId,
-                        ActivatedAt = DateTime.UtcNow,
-                        ExpiresAt = DateTime.UtcNow.AddMonths(request.Package.DurationMonths),
-                        IsActive = true
-                    };
+                    // Önce aynı paket için aktif bir kayıt var mı kontrol et
+                    var existingUserPackage = await _context.UserPackages
+                        .FirstOrDefaultAsync(up => up.UserId == packageRequest.UserId && up.PackageId == packageRequest.PackageId);
 
-                    _context.UserPackages.Add(userPackage);
+                    if (existingUserPackage == null)
+                    {
+                        // Paket bilgilerini al
+                        var package = await _context.Packages.FindAsync(packageRequest.PackageId);
+                        
+                        var userPackage = new UserPackage
+                        {
+                            UserId = packageRequest.UserId,
+                            PackageId = packageRequest.PackageId,
+                            ActivatedAt = DateTime.UtcNow,
+                            ExpiresAt = DateTime.UtcNow.AddMonths(package?.DurationMonths ?? 12),
+                            IsActive = true
+                        };
+
+                        _context.UserPackages.Add(userPackage);
+                    }
                 }
 
                 await _context.SaveChangesAsync();
 
-                return Json(new { success = true, message = $"Talep başarıyla {status.ToLower()} edildi." });
+                string statusMessage = status == "Approved" ? "onaylandı" : "reddedildi";
+                return Json(new { success = true, message = $"Talep başarıyla {statusMessage}." });
             }
             catch (Exception ex)
             {
-                return Json(new { success = false, message = ex.Message });
+                Console.WriteLine($"Hata: {ex.Message}");
+                Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+                return Json(new { success = false, message = $"İşlem sırasında hata oluştu: {ex.Message}" });
             }
         }
 
@@ -428,5 +491,12 @@ namespace EgitimPlatformu.Controllers
     public class PackageRequestModel
     {
         public int PackageId { get; set; }
+    }
+
+    public class RespondToRequestModel
+    {
+        public int RequestId { get; set; }
+        public string Status { get; set; } = string.Empty;
+        public string Message { get; set; } = string.Empty;
     }
 }

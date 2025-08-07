@@ -3,6 +3,7 @@ using System;
 using EgitimPlatformu.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EgitimPlatformu.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250807164316_UpdatePackages")]
+    partial class UpdatePackages
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.7");
@@ -166,23 +169,6 @@ namespace EgitimPlatformu.Migrations
                             TestCount = 50,
                             UpdatedAt = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             VideoCount = 75
-                        },
-                        new
-                        {
-                            Id = 4,
-                            ColorCode = "#ff6b35",
-                            CreatedAt = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Canlı Ders Paketi - Tüm Sınıflar İçin Matematik Dersleri",
-                            DurationMonths = 6,
-                            Features = "{\"matematik\":true,\"canli_ders\":true}",
-                            Grade = "Tüm Sınıflar",
-                            IconClass = "fas fa-video",
-                            IsActive = true,
-                            Name = "Canlı Ders",
-                            Price = 599.99m,
-                            TestCount = 60,
-                            UpdatedAt = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            VideoCount = 100
                         });
                 });
 

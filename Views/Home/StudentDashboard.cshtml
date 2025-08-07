@@ -10,7 +10,7 @@
             <div class="col-12">
                 <div class="welcome-header">
                     <h1 class="dashboard-title">
-                        <i class="fas fa-graduation-cap text-success"></i>
+                        <i class="fas fa-graduation-cap text-primary"></i>
                         Hoş Geldiniz, @ViewBag.UserName
                     </h1>
                     <p class="text-muted">Eğitim alanınız - Hedeflerinize ulaşın!</p>
@@ -443,7 +443,7 @@
 
 <style>
 .student-dashboard {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
     padding: 20px;
     margin: 0;
@@ -454,29 +454,37 @@
 .welcome-header {
     text-align: center;
     margin-bottom: 30px;
-    color: white;
+    color: #2c3e50;
 }
 
 .dashboard-title {
-    color: white;
-    font-weight: 600;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: #2c3e50;
+    font-weight: 700;
+    text-shadow: none;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.dashboard-title i {
+    color: #3498db;
+    margin-right: 15px;
 }
 
 .stat-card.modern {
     background: white;
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
     border: none;
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .stat-card.modern:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
 .stat-card.modern::before {
@@ -486,41 +494,42 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(45deg, #667eea, #764ba2);
+    background: linear-gradient(45deg, #3498db, #2980b9);
 }
 
 .stat-icon-wrapper {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .stat-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 15px;
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 28px;
     color: white;
-    margin-right: 15px;
+    margin-right: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .bg-gradient-primary {
-    background: linear-gradient(45deg, #007bff, #0056b3) !important;
+    background: linear-gradient(45deg, #3498db, #2980b9) !important;
 }
 
 .bg-gradient-success {
-    background: linear-gradient(45deg, #28a745, #1e7e34) !important;
+    background: linear-gradient(45deg, #27ae60, #2ecc71) !important;
 }
 
 .bg-gradient-info {
-    background: linear-gradient(45deg, #17a2b8, #117a8b) !important;
+    background: linear-gradient(45deg, #17a2b8, #20c997) !important;
 }
 
 .bg-gradient-warning {
-    background: linear-gradient(45deg, #ffc107, #e0a800) !important;
+    background: linear-gradient(45deg, #f39c12, #e67e22) !important;
 }
 
 .stat-content {
@@ -528,44 +537,45 @@
 }
 
 .stat-number {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 800;
     color: #2c3e50;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     line-height: 1;
 }
 
 .stat-label {
-    color: #6c757d;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    font-weight: 500;
+    color: #7f8c8d;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    font-weight: 600;
 }
 
 .stat-trend {
     display: flex;
     align-items: center;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 600;
 }
 
 .stat-trend i {
-    margin-right: 5px;
+    margin-right: 8px;
 }
 
 .course-package {
     background: white;
-    border-radius: 15px;
-    padding: 25px;
+    border-radius: 20px;
+    padding: 30px;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
     cursor: pointer;
-    height: 320px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .course-package::before {
@@ -577,85 +587,87 @@
     height: 4px;
 }
 
-.course-package.lgs-package::before { background: linear-gradient(45deg, #28a745, #20c997); }
-.course-package.tyt-package::before { background: linear-gradient(45deg, #007bff, #0056b3); }
-.course-package.ayt-package::before { background: linear-gradient(45deg, #dc3545, #c82333); }
+.course-package.lgs-package::before { background: linear-gradient(45deg, #27ae60, #2ecc71); }
+.course-package.tyt-package::before { background: linear-gradient(45deg, #3498db, #2980b9); }
+.course-package.ayt-package::before { background: linear-gradient(45deg, #e74c3c, #c0392b); }
 
 .course-package:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
     cursor: pointer;
 }
 
 .course-package:active {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
 .package-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #6c757d;
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    color: #95a5a6;
 }
 
-.lgs-package .package-icon { color: #28a745; }
-.tyt-package .package-icon { color: #007bff; }
-.ayt-package .package-icon { color: #dc3545; }
+.lgs-package .package-icon { color: #27ae60; }
+.tyt-package .package-icon { color: #3498db; }
+.ayt-package .package-icon { color: #e74c3c; }
 
 .package-info {
     flex-grow: 1;
 }
 
 .package-name {
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 1.4rem;
+    font-weight: 700;
     color: #2c3e50;
-    margin-bottom: 10px;
-}
-
-.package-description {
-    color: #6c757d;
-    font-size: 0.9rem;
     margin-bottom: 15px;
 }
 
-.package-grade {
-    background: #f8f9fa;
-    color: #495057;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 10px;
+.package-description {
+    color: #7f8c8d;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
-.package-price {
-    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-    color: white;
-    padding: 8px 16px;
+.package-grade {
+    background: #ecf0f1;
+    color: #2c3e50;
+    padding: 8px 20px;
     border-radius: 25px;
     font-size: 0.9rem;
     font-weight: 700;
     display: inline-block;
     margin-bottom: 15px;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.package-price {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    display: inline-block;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.3);
 }
 
 .package-stats {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .stat-item {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 8px;
-    font-size: 0.85rem;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
 }
 
 .stat-item i {
-    margin-right: 8px;
+    margin-right: 10px;
 }
 
 .package-button {
@@ -665,143 +677,151 @@
 .activity-item {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
-    padding: 10px;
-    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 15px;
     transition: all 0.3s ease;
+    background: #f8f9fa;
 }
 
 .activity-item:hover {
-    background-color: #f8f9fa;
-    transform: translateX(5px);
+    background-color: #e9ecef;
+    transform: translateX(8px);
 }
 
 .activity-icon {
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
+    margin-right: 20px;
     color: white;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .activity-text {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #2c3e50;
     margin: 0;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .activity-time {
-    color: #6c757d;
-    font-size: 0.75rem;
+    color: #7f8c8d;
+    font-size: 0.85rem;
+    font-weight: 500;
 }
 
 .progress-item {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .progress-label {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #2c3e50;
-    font-weight: 500;
-    margin-bottom: 5px;
+    font-weight: 600;
+    margin-bottom: 8px;
     display: block;
 }
 
 .progress-bar-container {
     display: flex;
     align-items: center;
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 .progress {
     flex-grow: 1;
-    margin-right: 10px;
-    height: 8px;
-    border-radius: 4px;
-    background-color: #e9ecef;
+    margin-right: 15px;
+    height: 12px;
+    border-radius: 6px;
+    background-color: #ecf0f1;
+    overflow: hidden;
 }
 
 .progress-bar {
-    border-radius: 4px;
-    transition: width 0.6s ease;
+    border-radius: 6px;
+    transition: width 0.8s ease;
 }
 
 .progress-percent {
-    font-size: 0.8rem;
-    color: #6c757d;
-    font-weight: 600;
-    min-width: 35px;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    font-weight: 700;
+    min-width: 40px;
 }
 
 .teacher-info {
     display: flex;
     align-items: center;
-    margin-bottom: 25px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #ecf0f1;
     transition: all 0.3s ease;
 }
 
 .teacher-info:hover {
-    background-color: rgba(40, 167, 69, 0.1);
-    border-radius: 10px;
-    padding: 10px;
-    margin: -10px -10px 15px -10px;
+    background-color: rgba(39, 174, 96, 0.1);
+    border-radius: 15px;
+    padding: 15px;
+    margin: -15px -15px 15px -15px;
 }
 
 .teacher-avatar {
-    margin-right: 15px;
+    margin-right: 20px;
 }
 
 .teacher-photo {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #28a745;
+    border: 4px solid #27ae60;
+    box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
 }
 
 .teacher-name {
-    font-weight: 600;
+    font-weight: 700;
     color: #2c3e50;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
 }
 
 .teacher-title {
-    color: #6c757d;
-    font-size: 0.9rem;
-    margin-bottom: 8px;
-}
-
-.teacher-status {
-    font-size: 0.8rem;
+    color: #7f8c8d;
+    font-size: 1rem;
+    margin-bottom: 10px;
     font-weight: 500;
 }
 
+.teacher-status {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
 .teacher-status.online {
-    color: #28a745;
+    color: #27ae60;
 }
 
 .teacher-status i {
-    font-size: 0.6rem;
-    margin-right: 5px;
+    font-size: 0.7rem;
+    margin-right: 8px;
 }
 
 .event-item {
     display: flex;
     align-items: center;
-    padding: 15px;
-    border-bottom: 1px solid #e9ecef;
+    padding: 20px;
+    border-bottom: 2px solid #ecf0f1;
     transition: all 0.3s ease;
 }
 
 .event-item:hover {
     background-color: #f8f9fa;
+    transform: translateX(8px);
 }
 
 .event-item:last-child {
@@ -810,64 +830,66 @@
 
 .event-date {
     text-align: center;
-    margin-right: 15px;
-    min-width: 50px;
+    margin-right: 20px;
+    min-width: 60px;
 }
 
 .event-date .day {
     display: block;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 800;
     color: #2c3e50;
 }
 
 .event-date .month {
     display: block;
-    font-size: 0.8rem;
-    color: #6c757d;
+    font-size: 0.9rem;
+    color: #7f8c8d;
     text-transform: uppercase;
+    font-weight: 600;
 }
 
 .event-title {
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     color: #2c3e50;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .event-time {
-    font-size: 0.8rem;
-    color: #6c757d;
+    font-size: 0.9rem;
+    color: #7f8c8d;
     margin: 0;
+    font-weight: 500;
 }
 
 /* Student Chat Message Styles */
 .student-chat-sent {
     max-width: 70%;
-    background: linear-gradient(45deg, #28a745, #20c997);
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
     color: white;
-    border-radius: 18px 18px 5px 18px;
-    padding: 12px 16px;
+    border-radius: 20px 20px 5px 20px;
+    padding: 15px 20px;
     margin-left: auto;
-    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
 }
 
 .student-chat-received {
     max-width: 70%;
-    background-color: #e9ecef;
-    color: #212529;
-    border-radius: 18px 18px 18px 5px;
-    padding: 12px 16px;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    border-radius: 20px 20px 20px 5px;
+    padding: 15px 20px;
     margin-right: auto;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* Student Message List Styles */
 .student-message-item {
     display: flex;
     align-items: flex-start;
-    padding: 15px;
-    border-bottom: 1px solid #e9ecef;
+    padding: 20px;
+    border-bottom: 2px solid #ecf0f1;
     cursor: pointer;
     transition: all 0.3s ease;
     background: white;
@@ -875,7 +897,7 @@
 
 .student-message-item:hover {
     background-color: #f8f9fa;
-    transform: translateX(5px);
+    transform: translateX(8px);
 }
 
 .student-message-item:last-child {
@@ -884,22 +906,22 @@
 
 .student-sent-message {
     background-color: #e8f5e8;
-    border-left: 4px solid #28a745;
+    border-left: 4px solid #27ae60;
 }
 
 .student-received-message {
     background-color: #e3f2fd;
-    border-left: 4px solid #007bff;
+    border-left: 4px solid #3498db;
 }
 
 .student-message-item .message-avatar {
-    margin-right: 15px;
-    width: 40px;
+    margin-right: 20px;
+    width: 50px;
     text-align: center;
 }
 
 .student-message-item .message-avatar i {
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 .student-message-item .message-content {
@@ -910,56 +932,81 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .student-message-item .message-sender {
-    font-weight: 600;
+    font-weight: 700;
     color: #2c3e50;
-    font-size: 0.9em;
+    font-size: 1rem;
 }
 
 .student-message-item .message-time {
-    color: #6c757d;
-    font-size: 0.8em;
+    color: #7f8c8d;
+    font-size: 0.9rem;
     margin-left: auto;
+    font-weight: 500;
 }
 
 .student-message-item .message-text {
-    color: #495057;
-    font-size: 0.9em;
+    color: #34495e;
+    font-size: 1rem;
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.5;
+    font-weight: 500;
 }
 
 .card {
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .card-header {
-    border-radius: 15px 15px 0 0 !important;
+    border-radius: 20px 20px 0 0 !important;
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
 .form-select, .form-control {
-    border-radius: 10px;
-    border: 1px solid #e9ecef;
+    border-radius: 15px;
+    border: 2px solid #ecf0f1;
+    font-weight: 500;
 }
 
 .form-select:focus, .form-control:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
 }
 
 .btn {
-    border-radius: 10px;
-    font-weight: 600;
+    border-radius: 15px;
+    font-weight: 700;
     transition: all 0.3s ease;
+    padding: 12px 24px;
+    font-size: 1rem;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.modal-content {
+    border-radius: 20px;
+}
+
+.modal-header {
+    border-radius: 20px 20px 0 0 !important;
+}
+
+.modal-footer {
+    border-radius: 0 0 20px 20px !important;
 }
 </style>
 
@@ -1009,12 +1056,22 @@ function showPackageRequestModal(packageType) {
                 // Modal'ı aç
                 new bootstrap.Modal(document.getElementById('packageRequestModal')).show();
             } else {
-                alert('Paket bilgileri yüklenirken hata oluştu!');
+                Swal.fire({
+                    title: 'Hata!',
+                    text: 'Paket bilgileri yüklenirken hata oluştu!',
+                    icon: 'error',
+                    confirmButtonColor: '#dc3545'
+                });
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('Paket bilgileri yüklenirken hata oluştu!');
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Paket bilgileri yüklenirken hata oluştu!',
+                icon: 'error',
+                confirmButtonColor: '#dc3545'
+            });
         });
 }
 
@@ -1023,6 +1080,10 @@ function getPackageId(packageType) {
         case 'lgs': return 1;
         case 'tyt': return 2;
         case 'ayt': return 3;
+        case 'canlı ders':
+        case 'canli ders':
+        case 'canlıders':
+        case 'canliders': return 4;
         default: return 1;
     }
 }
@@ -1031,9 +1092,24 @@ function requestPackage() {
     const packageId = document.getElementById('requestedPackageId').value;
     
     if (!packageId) {
-        alert('Paket seçimi hatası!');
+        Swal.fire({
+            title: 'Hata!',
+            text: 'Paket seçimi hatası!',
+            icon: 'error',
+            confirmButtonColor: '#dc3545'
+        });
         return;
     }
+    
+    // Loading göster
+    Swal.fire({
+        title: 'Talep gönderiliyor...',
+        text: 'Lütfen bekleyin',
+        allowOutsideClick: false,
+        didOpen: () => {
+            Swal.showLoading();
+        }
+    });
     
     // Paket talebi gönder
     fetch('/Package/RequestPackage', {
@@ -1046,21 +1122,36 @@ function requestPackage() {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            alert('Paket talebiniz başarıyla gönderildi!');
-            
-            // Modal'ı kapat
-            bootstrap.Modal.getInstance(document.getElementById('packageRequestModal')).hide();
-            
-            // Paketleri yeniden yükle
-            loadPackages();
-            loadMyRequests();
+            Swal.fire({
+                title: 'Başarılı!',
+                text: 'Paket talebiniz başarıyla gönderildi!',
+                icon: 'success',
+                confirmButtonColor: '#28a745'
+            }).then(() => {
+                // Modal'ı kapat
+                bootstrap.Modal.getInstance(document.getElementById('packageRequestModal')).hide();
+                
+                // Paketleri yeniden yükle
+                loadPackages();
+                loadMyRequests();
+            });
         } else {
-            alert('Paket talebi başarısız: ' + data.message);
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Paket talebi başarısız: ' + data.message,
+                icon: 'error',
+                confirmButtonColor: '#dc3545'
+            });
         }
     })
     .catch(error => {
         console.error('Error:', error);
-        alert('Paket talebi sırasında hata oluştu!');
+        Swal.fire({
+            title: 'Hata!',
+            text: 'Paket talebi sırasında hata oluştu!',
+            icon: 'error',
+            confirmButtonColor: '#dc3545'
+        });
     });
 }
 
@@ -1095,12 +1186,22 @@ function openLessons(packageId) {
                 // Ders sayfasına yönlendir
                 window.location.href = `/Course/Lessons?packageId=${packageId}`;
             } else {
-                alert('Bu pakete erişiminiz bulunmuyor. Lütfen önce öğretmeninizden onay alın.');
+                Swal.fire({
+                    title: 'Erişim Yok',
+                    text: 'Bu pakete erişiminiz bulunmuyor. Lütfen önce öğretmeninizden onay alın.',
+                    icon: 'warning',
+                    confirmButtonColor: '#ffc107'
+                });
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('Paket erişimi kontrol edilirken hata oluştu!');
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Paket erişimi kontrol edilirken hata oluştu!',
+                icon: 'error',
+                confirmButtonColor: '#dc3545'
+            });
         });
 }
 
@@ -1109,9 +1210,24 @@ function sendMessage() {
     const content = document.getElementById('messageContent').value;
     
     if (content.trim() === '') {
-        alert('Lütfen mesajınızı yazın!');
+        Swal.fire({
+            title: 'Uyarı',
+            text: 'Lütfen mesajınızı yazın!',
+            icon: 'warning',
+            confirmButtonColor: '#ffc107'
+        });
         return;
     }
+    
+    // Loading göster
+    Swal.fire({
+        title: 'Mesaj gönderiliyor...',
+        text: 'Lütfen bekleyin',
+        allowOutsideClick: false,
+        didOpen: () => {
+            Swal.showLoading();
+        }
+    });
     
     // AJAX ile mesaj gönder
     fetch('/Message/Send', {
@@ -1129,15 +1245,30 @@ function sendMessage() {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            alert('Mesajınız başarıyla gönderildi!');
+            Swal.fire({
+                title: 'Başarılı!',
+                text: 'Mesajınız başarıyla gönderildi!',
+                icon: 'success',
+                confirmButtonColor: '#28a745'
+            });
             document.getElementById('messageContent').value = '';
         } else {
-            alert('Mesaj gönderilirken bir hata oluştu: ' + data.message);
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Mesaj gönderilirken bir hata oluştu: ' + data.message,
+                icon: 'error',
+                confirmButtonColor: '#dc3545'
+            });
         }
     })
     .catch(error => {
         console.error('Error:', error);
-        alert('Mesaj gönderildi! (Demo modda)');
+        Swal.fire({
+            title: 'Başarılı!',
+            text: 'Mesaj gönderildi! (Demo modda)',
+            icon: 'success',
+            confirmButtonColor: '#28a745'
+        });
         document.getElementById('messageContent').value = '';
     });
 }
@@ -1197,9 +1328,24 @@ function sendTeacherMessage() {
     const content = document.getElementById('teacherChatContent').value;
     
     if (!content.trim()) {
-        alert('Lütfen mesajınızı yazın!');
+        Swal.fire({
+            title: 'Uyarı',
+            text: 'Lütfen mesajınızı yazın!',
+            icon: 'warning',
+            confirmButtonColor: '#ffc107'
+        });
         return;
     }
+    
+    // Loading göster
+    Swal.fire({
+        title: 'Mesaj gönderiliyor...',
+        text: 'Lütfen bekleyin',
+        allowOutsideClick: false,
+        didOpen: () => {
+            Swal.showLoading();
+        }
+    });
     
     // AJAX ile mesaj gönder
     fetch('/Message/Send', {
@@ -1222,12 +1368,22 @@ function sendTeacherMessage() {
             // Sohbeti yeniden yükle
             loadTeacherChatMessages();
         } else {
-            alert('Mesaj gönderilirken bir hata oluştu: ' + data.message);
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Mesaj gönderilirken bir hata oluştu: ' + data.message,
+                icon: 'error',
+                confirmButtonColor: '#dc3545'
+            });
         }
     })
     .catch(error => {
         console.error('Error:', error);
-        alert('Mesaj gönderilirken bir hata oluştu!');
+        Swal.fire({
+            title: 'Hata!',
+            text: 'Mesaj gönderilirken bir hata oluştu!',
+            icon: 'error',
+            confirmButtonColor: '#dc3545'
+        });
     });
 }
 
@@ -1305,13 +1461,13 @@ function renderPackages(packages) {
     let packagesHtml = '';
     
     packages.forEach(pkg => {
-        const packageClass = pkg.name.toLowerCase() + '-package';
+        const packageClass = pkg.name.toLowerCase().replace(' ', '-') + '-package';
         const isActive = pkg.isActive;
-        const buttonClass = isActive ? (pkg.name === 'LGS' ? 'btn-success' : 'btn-primary') : 'btn-secondary';
-        const buttonText = isActive ? (pkg.name === 'LGS' ? 'Devam Et' : 'Başla') : 'Yakında';
-        const buttonIcon = isActive ? 'fas fa-play' : 'fas fa-lock';
-        const statusIcon = isActive ? 'fas fa-chart-line text-success' : 'fas fa-lock text-danger';
-        const statusText = isActive ? (pkg.name === 'LGS' ? '%78 İlerleme' : '%45 İlerleme') : 'Kilitli';
+        const buttonClass = isActive ? (pkg.name === 'LGS' ? 'btn-success' : pkg.name === 'Canlı Ders' ? 'btn-warning' : 'btn-primary') : 'btn-secondary';
+        const buttonText = isActive ? (pkg.name === 'LGS' ? 'Devam Et' : pkg.name === 'Canlı Ders' ? 'Katıl' : 'Başla') : 'Yakında';
+        const buttonIcon = isActive ? (pkg.name === 'Canlı Ders' ? 'fas fa-video' : 'fas fa-play') : 'fas fa-lock';
+        const statusIcon = isActive ? (pkg.name === 'Canlı Ders' ? 'fas fa-video text-warning' : 'fas fa-chart-line text-success') : 'fas fa-lock text-danger';
+        const statusText = isActive ? (pkg.name === 'Canlı Ders' ? 'Canlı Dersler' : pkg.name === 'LGS' ? '%78 İlerleme' : '%45 İlerleme') : 'Kilitli';
         
         packagesHtml += `
             <div class="col-md-4 mb-4">
@@ -1371,6 +1527,44 @@ function updateStats(packages) {
     document.getElementById('activePackages').textContent = activePackages;
     document.getElementById('totalVideos').textContent = totalVideos;
     document.getElementById('totalTests').textContent = totalTests;
+}
+
+// Talep durumunu kontrol et
+function checkRequestStatus(packageId) {
+    return fetch(`/Package/GetMyRequests`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const request = data.data.find(r => r.packageId === packageId);
+                return request;
+            }
+            return null;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            return null;
+        });
+}
+
+// Paket butonunu güncelle
+function updatePackageButton(packageId, buttonElement) {
+    checkRequestStatus(packageId).then(request => {
+        if (request) {
+            if (request.status === 'Pending') {
+                buttonElement.innerHTML = '<i class="fas fa-clock me-2"></i>Bekliyor';
+                buttonElement.className = 'btn btn-warning btn-sm';
+                buttonElement.disabled = true;
+            } else if (request.status === 'Rejected') {
+                buttonElement.innerHTML = '<i class="fas fa-times me-2"></i>Reddedildi';
+                buttonElement.className = 'btn btn-danger btn-sm';
+                buttonElement.disabled = true;
+            } else if (request.status === 'Approved') {
+                buttonElement.innerHTML = '<i class="fas fa-check me-2"></i>Onaylandı';
+                buttonElement.className = 'btn btn-success btn-sm';
+                buttonElement.disabled = true;
+            }
+        }
+    });
 }
 
 // Sayfa yüklendiğinde
