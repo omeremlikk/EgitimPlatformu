@@ -183,6 +183,70 @@ namespace EgitimPlatformu.Controllers
                 return Json(new { success = false, message = ex.Message });
             }
         }
+
+        [HttpGet]
+        [AllowAnonymous] // Geçici olarak test için
+        public async Task<IActionResult> GetGroupedMessages()
+        {
+            try
+            {
+                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
+                
+                if (userId == 0)
+                {
+                    return Json(new { success = false, message = "Kullanıcı bulunamadı" });
+                }
+
+                // Önce basit bir sorgu ile test edelim
+                var allMessages = await _context.Messages
+                    .Where(m => m.ReceiverId == userId || m.SenderId == userId)
+                    .Include(m => m.Sender)
+                    .Include(m => m.Receiver)
+                    .ToListAsync();
+
+                if (!allMessages.Any())
+                {
+                    return Json(new { success = true, data = new List<object>() });
+                }
+
+                // Mesajları gruplandır
+                var groupedMessages = allMessages
+                    .GroupBy(m => m.SenderId == userId ? m.ReceiverId : m.SenderId)
+                    .Select(g => new
+                    {
+                        studentId = g.Key,
+                        studentName = g.First().SenderId == userId ? 
+                            g.First().Receiver.FirstName + " " + g.First().Receiver.LastName :
+                            g.First().Sender.FirstName + " " + g.First().Sender.LastName,
+                        studentEmail = g.First().SenderId == userId ? 
+                            g.First().Receiver.Email :
+                            g.First().Sender.Email,
+                        lastMessage = g.OrderByDescending(m => m.SentAt).First(),
+                        unreadCount = g.Count(m => m.SenderId != userId && !m.IsRead),
+                        totalMessages = g.Count()
+                    })
+                    .OrderByDescending(g => g.lastMessage.SentAt)
+                    .ToList();
+
+                var result = groupedMessages.Select(g => new
+                {
+                    studentId = g.studentId,
+                    studentName = g.studentName,
+                    studentEmail = g.studentEmail,
+                    lastMessageContent = g.lastMessage.Content,
+                    lastMessageTime = g.lastMessage.SentAt.ToString("dd.MM.yyyy HH:mm"),
+                    unreadCount = g.unreadCount,
+                    totalMessages = g.totalMessages,
+                    isLastMessageFromMe = g.lastMessage.SenderId == userId
+                }).ToList();
+
+                return Json(new { success = true, data = result });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
     }
 
     public class SendMessageRequest

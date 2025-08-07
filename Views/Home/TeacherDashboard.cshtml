@@ -106,7 +106,7 @@
                         </h5>
                     </div>
                     <div class="card-body p-0">
-                        <div class="message-list" id="messageList" style="height: 400px; overflow-y: auto;">
+                        <div class="student-message-list" id="studentMessageList" style="height: 400px; overflow-y: auto;">
                             <div class="text-center p-4">
                                 <i class="fas fa-spinner fa-spin"></i>
                                 <p class="mt-2">Mesajlar yükleniyor...</p>
@@ -121,16 +121,16 @@
                                         <option value="">Öğrenci Seçin</option>
                                     </select>
                                     <button class="btn btn-primary btn-sm" onclick="showReplyModal()">
-                                    <i class="fas fa-reply me-1"></i>
-                                    Mesaj Gönder
-                                </button>
+                                        <i class="fas fa-reply me-1"></i>
+                                        Mesaj Gönder
+                                    </button>
+                                </div>
                             </div>
-                        </div>
                             <div class="col-12">
-                        <button class="btn btn-success btn-sm w-100" onclick="loadMessages()">
-                            <i class="fas fa-refresh me-2"></i>
-                            Mesajları Yenile
-                        </button>
+                                <button class="btn btn-success btn-sm w-100" onclick="loadGroupedMessages()">
+                                    <i class="fas fa-refresh me-2"></i>
+                                    Mesajları Yenile
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -564,6 +564,126 @@
     padding: 12px 16px;
 }
 
+.student-message-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ecf0f1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+    position: relative;
+}
+
+.student-message-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.student-message-item:last-child {
+    border-bottom: none;
+}
+
+.student-message-item.unread {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+}
+
+.student-message-item.unread:hover {
+    background-color: #ffeaa7;
+}
+
+.student-avatar {
+    margin-right: 15px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.student-content {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.student-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.student-name {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.student-time {
+    color: #7f8c8d;
+    font-size: 0.8rem;
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+.student-last-message {
+    color: #34495e;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.unread-badge {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+}
+
+.message-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #27ae60;
+}
+
+.message-indicator.sent {
+    background-color: #3498db;
+}
+
+.message-indicator.received {
+    background-color: #e74c3c;
+}
+
+/* Eski mesaj stilleri (test için) */
 .message-item {
     display: flex;
     align-items: flex-start;
@@ -1104,12 +1224,80 @@ function loadStudents() {
         });
 }
 
-// Mesajları yükle
-function loadMessages() {
-    fetch('/Message/GetMessages')
-        .then(response => response.json())
+// Gruplandırılmış mesajları yükle
+function loadGroupedMessages() {
+    console.log('loadGroupedMessages çağrıldı');
+    fetch('/Message/GetGroupedMessages')
+        .then(response => {
+            console.log('Response status:', response.status);
+            return response.json();
+        })
         .then(data => {
-            const messageList = document.getElementById('messageList');
+            console.log('Response data:', data);
+            const messageList = document.getElementById('studentMessageList');
+            
+            if (data.success && data.data.length > 0) {
+                let messagesHtml = '';
+                let totalUnreadCount = 0;
+                
+                data.data.forEach(student => {
+                    // Toplam okunmamış mesaj sayısını hesapla
+                    totalUnreadCount += student.unreadCount;
+                    
+                    // Öğrenci adının baş harflerini al
+                    const nameParts = student.studentName.split(' ');
+                    const initials = nameParts.map(part => part.charAt(0)).join('').toUpperCase();
+                    
+                    // Mesaj HTML'i oluştur
+                    const unreadClass = student.unreadCount > 0 ? 'unread' : '';
+                    const indicatorClass = student.isLastMessageFromMe ? 'sent' : 'received';
+                    
+                    messagesHtml += `
+                        <div class="student-message-item ${unreadClass}" onclick="openStudentChat(${student.studentId}, '${student.studentName}')">
+                            <div class="student-avatar">
+                                ${initials}
+                            </div>
+                            <div class="student-content">
+                                <div class="student-header">
+                                    <span class="student-name">${student.studentName}</span>
+                                    <span class="student-time">${student.lastMessageTime}</span>
+                                </div>
+                                <p class="student-last-message">
+                                    ${student.isLastMessageFromMe ? 'Siz: ' : ''}${student.lastMessageContent.substring(0, 50)}${student.lastMessageContent.length > 50 ? '...' : ''}
+                                </p>
+                            </div>
+                            ${student.unreadCount > 0 ? `<div class="unread-badge">${student.unreadCount}</div>` : ''}
+                            <div class="message-indicator ${indicatorClass}"></div>
+                        </div>
+                    `;
+                });
+                
+                // Toplam mesaj sayısını güncelle
+                document.getElementById('messageCount').textContent = totalUnreadCount;
+                
+                messageList.innerHTML = messagesHtml;
+            } else {
+                messageList.innerHTML = '<div class="text-center p-4"><p class="text-muted">Henüz mesaj bulunmuyor.</p></div>';
+                document.getElementById('messageCount').textContent = '0';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('studentMessageList').innerHTML = '<div class="text-center p-4"><p class="text-danger">Mesajlar yüklenirken hata oluştu.</p></div>';
+        });
+}
+
+// Eski mesaj yükleme fonksiyonu (test için)
+function loadMessages() {
+    console.log('loadMessages çağrıldı');
+    fetch('/Message/GetMessages')
+        .then(response => {
+            console.log('GetMessages Response status:', response.status);
+            return response.json();
+        })
+        .then(data => {
+            console.log('GetMessages Response data:', data);
+            const messageList = document.getElementById('studentMessageList');
             
             if (data.success && data.data.length > 0) {
                 let messagesHtml = '';
@@ -1155,7 +1343,7 @@ function loadMessages() {
         })
         .catch(error => {
             console.error('Error:', error);
-            document.getElementById('messageList').innerHTML = '<div class="text-center p-4"><p class="text-danger">Mesajlar yüklenirken hata oluştu.</p></div>';
+            document.getElementById('studentMessageList').innerHTML = '<div class="text-center p-4"><p class="text-danger">Mesajlar yüklenirken hata oluştu.</p></div>';
         });
 }
 
@@ -1170,7 +1358,7 @@ function markAsRead(messageId) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            loadMessages(); // Mesajları yeniden yükle
+            loadGroupedMessages(); // Gruplandırılmış mesajları yeniden yükle
         }
     })
     .catch(error => {
@@ -1226,7 +1414,7 @@ function sendTeacherMessage() {
             bootstrap.Modal.getInstance(document.getElementById('replyModal')).hide();
             
             // Mesajları yeniden yükle
-            loadMessages();
+            loadGroupedMessages();
         } else {
             alert('Mesaj gönderilirken bir hata oluştu: ' + data.message);
         }
@@ -1330,7 +1518,7 @@ function sendChatMessage() {
             loadChatMessages(currentChatStudentId);
             
             // Ana mesaj listesini de güncelle
-            loadMessages();
+            loadGroupedMessages();
         } else {
             alert('Mesaj gönderilirken bir hata oluştu: ' + data.message);
         }
@@ -1492,11 +1680,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Talepleri yükle
     loadRequests();
     
-    // Mesajları yükle
-    loadMessages();
+    // Mesajları yükle (yeni fonksiyonu test et)
+    loadGroupedMessages();
     
     // Her 5 saniyede bir mesajları yenile
-    setInterval(loadMessages, 5000);
+    setInterval(loadGroupedMessages, 5000);
     
     // Her 10 saniyede bir talepleri yenile
     setInterval(loadRequests, 10000);
@@ -1507,5 +1695,16 @@ document.addEventListener('DOMContentLoaded', function() {
             loadChatMessages(currentChatStudentId);
         }
     }, 3000);
+    
+    // Gruplandırılmış mesajları da yenile
+    setInterval(function() {
+        if (!document.getElementById('studentChatModal').classList.contains('show')) {
+            loadGroupedMessages();
+        }
+    }, 5000);
+    
+    // Test için debug bilgisi
+    console.log('TeacherDashboard yüklendi');
+    console.log('studentMessageList elementi:', document.getElementById('studentMessageList'));
 });
 </script>
