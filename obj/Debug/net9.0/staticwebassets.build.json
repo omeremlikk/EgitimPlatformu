@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HRPCsA4pU6iPgUlkfQeNMEXzuzwv+pKpFREOhTOjVxA=",
+  "Hash": "lFmD3gmd8Zzcn6ooSQTFtA2wJIyAksr2dpxeaubD9Tw=",
   "Source": "EgitimPlatformu",
   "BasePath": "_content/EgitimPlatformu",
   "Mode": "Default",
@@ -1445,6 +1445,27 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\img\\ogretmen-yeni.jpg",
+      "SourceId": "EgitimPlatformu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\",
+      "BasePath": "_content/EgitimPlatformu",
+      "RelativePath": "img/ogretmen-yeni#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "utdj7dom9n",
+      "Integrity": "PngMXFxOqkGNhs5Q4EBmHepcg0PmnAOcng8Vn3eoTMo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\ogretmen-yeni.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\img\\ogretmen.png",
       "SourceId": "EgitimPlatformu",
       "SourceType": "Discovered",
@@ -2773,7 +2794,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 22:35:46 GMT"
+          "Value": "Tue, 23 Sep 2025 14:08:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2826,7 +2847,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 22:35:46 GMT"
+          "Value": "Tue, 23 Sep 2025 14:08:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2863,7 +2884,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 22:35:46 GMT"
+          "Value": "Tue, 23 Sep 2025 14:08:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2910,7 +2931,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 22:35:46 GMT"
+          "Value": "Tue, 23 Sep 2025 14:08:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2971,7 +2992,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 22:35:46 GMT"
+          "Value": "Tue, 23 Sep 2025 14:08:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3016,7 +3037,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 22:35:46 GMT"
+          "Value": "Tue, 23 Sep 2025 14:08:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3937,6 +3958,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-wfFuuYm+Lh6RbCeeiUqxw334b/hIOkp5j9eokGUM1Y0="
+        }
+      ]
+    },
+    {
+      "Route": "img/ogretmen-yeni.jpg",
+      "AssetFile": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\img\\ogretmen-yeni.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "95530"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PngMXFxOqkGNhs5Q4EBmHepcg0PmnAOcng8Vn3eoTMo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 23 Sep 2025 14:02:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PngMXFxOqkGNhs5Q4EBmHepcg0PmnAOcng8Vn3eoTMo="
+        }
+      ]
+    },
+    {
+      "Route": "img/ogretmen-yeni.utdj7dom9n.jpg",
+      "AssetFile": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\img\\ogretmen-yeni.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "95530"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PngMXFxOqkGNhs5Q4EBmHepcg0PmnAOcng8Vn3eoTMo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 23 Sep 2025 14:02:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "utdj7dom9n"
+        },
+        {
+          "Name": "label",
+          "Value": "img/ogretmen-yeni.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PngMXFxOqkGNhs5Q4EBmHepcg0PmnAOcng8Vn3eoTMo="
         }
       ]
     },
