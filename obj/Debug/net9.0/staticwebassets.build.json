@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lFmD3gmd8Zzcn6ooSQTFtA2wJIyAksr2dpxeaubD9Tw=",
+  "Hash": "BMWZD9/1+AFVoZFyLFRH2kEVAM5j0/h3uWcWB/a+DMc=",
   "Source": "EgitimPlatformu",
   "BasePath": "_content/EgitimPlatformu",
   "Mode": "Default",
@@ -1443,6 +1443,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\img\\calisan2.png",
+      "SourceId": "EgitimPlatformu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\",
+      "BasePath": "_content/EgitimPlatformu",
+      "RelativePath": "img/calisan2#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9cohbxc3he",
+      "Integrity": "h9the6iLOEv2AvnkBhQLnR2CcUCHVLaZ67PZg42SeCM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\calisan2.png"
+    },
+    {
+      "Identity": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\img\\hoca.png",
+      "SourceId": "EgitimPlatformu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\",
+      "BasePath": "_content/EgitimPlatformu",
+      "RelativePath": "img/hoca#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bpg5n47hgo",
+      "Integrity": "z5qHrq3axux54LgUdpWAuK0vIy46fpRqHirYz4mmEMk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\hoca.png"
     },
     {
       "Identity": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\img\\ogretmen-yeni.jpg",
@@ -3958,6 +4000,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-wfFuuYm+Lh6RbCeeiUqxw334b/hIOkp5j9eokGUM1Y0="
+        }
+      ]
+    },
+    {
+      "Route": "img/calisan2.9cohbxc3he.png",
+      "AssetFile": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\img\\calisan2.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1427276"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"h9the6iLOEv2AvnkBhQLnR2CcUCHVLaZ67PZg42SeCM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 27 Sep 2025 16:19:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9cohbxc3he"
+        },
+        {
+          "Name": "label",
+          "Value": "img/calisan2.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-h9the6iLOEv2AvnkBhQLnR2CcUCHVLaZ67PZg42SeCM="
+        }
+      ]
+    },
+    {
+      "Route": "img/calisan2.png",
+      "AssetFile": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\img\\calisan2.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1427276"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"h9the6iLOEv2AvnkBhQLnR2CcUCHVLaZ67PZg42SeCM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 27 Sep 2025 16:19:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-h9the6iLOEv2AvnkBhQLnR2CcUCHVLaZ67PZg42SeCM="
+        }
+      ]
+    },
+    {
+      "Route": "img/hoca.bpg5n47hgo.png",
+      "AssetFile": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\img\\hoca.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1015063"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z5qHrq3axux54LgUdpWAuK0vIy46fpRqHirYz4mmEMk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 27 Sep 2025 16:41:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bpg5n47hgo"
+        },
+        {
+          "Name": "label",
+          "Value": "img/hoca.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-z5qHrq3axux54LgUdpWAuK0vIy46fpRqHirYz4mmEMk="
+        }
+      ]
+    },
+    {
+      "Route": "img/hoca.png",
+      "AssetFile": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\img\\hoca.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1015063"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z5qHrq3axux54LgUdpWAuK0vIy46fpRqHirYz4mmEMk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 27 Sep 2025 16:41:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-z5qHrq3axux54LgUdpWAuK0vIy46fpRqHirYz4mmEMk="
         }
       ]
     },

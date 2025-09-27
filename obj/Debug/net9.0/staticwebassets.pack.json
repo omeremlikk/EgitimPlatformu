@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\img\\calisan2.png",
+      "PackagePath": "staticwebassets\\img\\calisan2.png"
+    },
+    {
+      "Id": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\img\\hoca.png",
+      "PackagePath": "staticwebassets\\img\\hoca.png"
+    },
+    {
       "Id": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\img\\ogretmen-yeni.jpg",
       "PackagePath": "staticwebassets\\img\\ogretmen-yeni.jpg"
     },

@@ -36,6 +36,30 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Jtxf9L\u002B5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"5430"},{"Name":"Content-Type","Value":"image/x-icon"},{"Name":"ETag","Value":"\u0022Jtxf9L\u002B5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\u0022"},{"Name":"Last-Modified","Value":"Mon, 28 Apr 2025 15:57:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/img/calisan2.9cohbxc3he.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\calisan2.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"9cohbxc3he"},{"Name":"integrity","Value":"sha256-h9the6iLOEv2AvnkBhQLnR2CcUCHVLaZ67PZg42SeCM="},{"Name":"label","Value":"_content/EgitimPlatformu/img/calisan2.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1427276"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022h9the6iLOEv2AvnkBhQLnR2CcUCHVLaZ67PZg42SeCM=\u0022"},{"Name":"Last-Modified","Value":"Sat, 27 Sep 2025 16:19:32 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/img/calisan2.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\calisan2.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-h9the6iLOEv2AvnkBhQLnR2CcUCHVLaZ67PZg42SeCM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"1427276"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022h9the6iLOEv2AvnkBhQLnR2CcUCHVLaZ67PZg42SeCM=\u0022"},{"Name":"Last-Modified","Value":"Sat, 27 Sep 2025 16:19:32 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/img/hoca.bpg5n47hgo.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\hoca.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"bpg5n47hgo"},{"Name":"integrity","Value":"sha256-z5qHrq3axux54LgUdpWAuK0vIy46fpRqHirYz4mmEMk="},{"Name":"label","Value":"_content/EgitimPlatformu/img/hoca.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1015063"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022z5qHrq3axux54LgUdpWAuK0vIy46fpRqHirYz4mmEMk=\u0022"},{"Name":"Last-Modified","Value":"Sat, 27 Sep 2025 16:41:26 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/img/hoca.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\hoca.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-z5qHrq3axux54LgUdpWAuK0vIy46fpRqHirYz4mmEMk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"1015063"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022z5qHrq3axux54LgUdpWAuK0vIy46fpRqHirYz4mmEMk=\u0022"},{"Name":"Last-Modified","Value":"Sat, 27 Sep 2025 16:41:26 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/img/ogretmen-yeni.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\ogretmen-yeni.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
