@@ -95,7 +95,6 @@ C:\Users\Ömer\Desktop\EgitimPlatformu\obj\Debug\net9.0\EgitimPlatformu.pdb
 C:\Users\Ömer\Desktop\EgitimPlatformu\obj\Debug\net9.0\EgitimPlatformu.genruntimeconfig.cache
 C:\Users\Ömer\Desktop\EgitimPlatformu\obj\Debug\net9.0\ref\EgitimPlatformu.dll
 C:\Users\Ömer\Desktop\EgitimPlatformu\obj\Debug\net9.0\EgitimPlatformu.sourcelink.json
-C:\Users\Ömer\Desktop\EgitimPlatformu\obj\Debug\net9.0\compressed\wb4wr7yuz8-ppjaoq2zst.gz
 C:\Users\Ömer\Desktop\EgitimPlatformu\bin\Debug\net9.0\Humanizer.dll
 C:\Users\Ömer\Desktop\EgitimPlatformu\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Ömer\Desktop\EgitimPlatformu\bin\Debug\net9.0\Microsoft.Build.Locator.dll
@@ -220,3 +219,4 @@ C:\Users\Ömer\Desktop\EgitimPlatformu\bin\Debug\net9.0\runtimes\win-x64\native\
 C:\Users\Ömer\Desktop\EgitimPlatformu\bin\Debug\net9.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\Ömer\Desktop\EgitimPlatformu\obj\Debug\net9.0\EgitimPlatformu.csproj.AssemblyReference.cache
 C:\Users\Ömer\Desktop\EgitimPlatformu\obj\Debug\net9.0\EgitimPl.AF493F6F.Up2Date
+C:\Users\Ömer\Desktop\EgitimPlatformu\obj\Debug\net9.0\compressed\wb4wr7yuz8-ft6nl8vq9k.gz

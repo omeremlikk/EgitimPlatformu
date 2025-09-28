@@ -3,14 +3,14 @@
     <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-TSJUwkz69CY2uJhH3vES001xwCnrvGJIg06gfRqrVFU="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"44783"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022TSJUwkz69CY2uJhH3vES001xwCnrvGJIg06gfRqrVFU=\u0022"},{"Name":"Last-Modified","Value":"Tue, 23 Sep 2025 14:08:38 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-vbhRtZIfjc7/rqH0bJhmc1tZxdptJ/V0niK6TTg7ILs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"47297"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022vbhRtZIfjc7/rqH0bJhmc1tZxdptJ/V0niK6TTg7ILs=\u0022"},{"Name":"Last-Modified","Value":"Sun, 28 Sep 2025 10:34:18 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/css/site.ppjaoq2zst.css">
+    <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/css/site.ft6nl8vq9k.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ppjaoq2zst"},{"Name":"integrity","Value":"sha256-TSJUwkz69CY2uJhH3vES001xwCnrvGJIg06gfRqrVFU="},{"Name":"label","Value":"_content/EgitimPlatformu/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"44783"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022TSJUwkz69CY2uJhH3vES001xwCnrvGJIg06gfRqrVFU=\u0022"},{"Name":"Last-Modified","Value":"Tue, 23 Sep 2025 14:08:38 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ft6nl8vq9k"},{"Name":"integrity","Value":"sha256-vbhRtZIfjc7/rqH0bJhmc1tZxdptJ/V0niK6TTg7ILs="},{"Name":"label","Value":"_content/EgitimPlatformu/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"47297"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022vbhRtZIfjc7/rqH0bJhmc1tZxdptJ/V0niK6TTg7ILs=\u0022"},{"Name":"Last-Modified","Value":"Sun, 28 Sep 2025 10:34:18 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/EgitimPlatformu.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\EgitimPlatformu.vnpbyqlzo1.bundle.scp.css'))</AssetFile>
@@ -83,6 +83,30 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-\u002BWXZGAMooiC1B5WAHt0V8eihLvNSYw/XA1gBdpxTBY0="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"447189"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022\u002BWXZGAMooiC1B5WAHt0V8eihLvNSYw/XA1gBdpxTBY0=\u0022"},{"Name":"Last-Modified","Value":"Tue, 29 Apr 2025 09:09:53 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/img/soru.5h0xrjr14n.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\soru.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5h0xrjr14n"},{"Name":"integrity","Value":"sha256-qZcqsCtBNSRxhlTnqMSYamOvZ1Cofs1EtG7Ue7hvO7s="},{"Name":"label","Value":"_content/EgitimPlatformu/img/soru.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"64038"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022qZcqsCtBNSRxhlTnqMSYamOvZ1Cofs1EtG7Ue7hvO7s=\u0022"},{"Name":"Last-Modified","Value":"Sun, 28 Sep 2025 09:07:24 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/img/soru.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\soru.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-qZcqsCtBNSRxhlTnqMSYamOvZ1Cofs1EtG7Ue7hvO7s="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"64038"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022qZcqsCtBNSRxhlTnqMSYamOvZ1Cofs1EtG7Ue7hvO7s=\u0022"},{"Name":"Last-Modified","Value":"Sun, 28 Sep 2025 09:07:24 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/img/test.ik78bqef14.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\test.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ik78bqef14"},{"Name":"integrity","Value":"sha256-rvTBSlvcCwTfxTZa0\u002B161z3hcRzmKJrvfasZqJILuwk="},{"Name":"label","Value":"_content/EgitimPlatformu/img/test.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"201352"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022rvTBSlvcCwTfxTZa0\u002B161z3hcRzmKJrvfasZqJILuwk=\u0022"},{"Name":"Last-Modified","Value":"Sun, 28 Sep 2025 10:11:33 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/img/test.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\test.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-rvTBSlvcCwTfxTZa0\u002B161z3hcRzmKJrvfasZqJILuwk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"201352"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022rvTBSlvcCwTfxTZa0\u002B161z3hcRzmKJrvfasZqJILuwk=\u0022"},{"Name":"Last-Modified","Value":"Sun, 28 Sep 2025 10:11:33 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EgitimPlatformu/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>

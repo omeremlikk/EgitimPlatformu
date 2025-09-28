@@ -29,6 +29,14 @@
       "PackagePath": "staticwebassets\\img\\ogretmen.png"
     },
     {
+      "Id": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\img\\soru.jpg",
+      "PackagePath": "staticwebassets\\img\\soru.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\img\\test.jpg",
+      "PackagePath": "staticwebassets\\img\\test.jpg"
+    },
+    {
       "Id": "C:\\Users\\Ömer\\Desktop\\EgitimPlatformu\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
