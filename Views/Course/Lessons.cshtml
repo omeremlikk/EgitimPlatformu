@@ -42,21 +42,21 @@
                 </div>
             </div>
 
-            <!-- Dersler -->
+            <!-- Video Dersleri -->
             <div class="col-md-8">
                 <div class="card shadow-lg border-0">
                     <div class="card-header bg-gradient-success text-white border-0">
                         <h5 class="mb-0">
-                            <i class="fas fa-book me-2"></i>
-                            Dersler
+                            <i class="fas fa-play-circle me-2"></i>
+                            Video Dersleri
                         </h5>
                     </div>
-                    <div class="card-body">
-                        <div class="row" id="lessonsContainer">
-                            <!-- Dersler dinamik olarak yüklenecek -->
+                    <div class="card-body p-0">
+                        <div class="video-list" id="videoContainer">
+                            <!-- Videolar dinamik olarak yüklenecek -->
                             <div class="text-center p-4">
                                 <i class="fas fa-spinner fa-spin"></i>
-                                <p class="mt-2">Dersler yükleniyor...</p>
+                                <p class="mt-2">Video dersleri yükleniyor...</p>
                             </div>
                         </div>
                     </div>
@@ -93,92 +93,186 @@
     color: #495057;
 }
 
-.lesson-card {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+.video-list {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.video-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
     transition: all 0.3s ease;
-    border: none;
-    margin-bottom: 20px;
+    cursor: pointer;
+    position: relative;
+    background: white;
+}
+
+.video-item:last-child {
+    border-bottom: none;
+}
+
+.video-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.video-item.completed {
+    background-color: #f1f8e9;
+    border-left: 4px solid #28a745;
+}
+
+.video-item.current {
+    background-color: #e3f2fd;
+    border-left: 4px solid #2196f3;
+}
+
+.video-thumbnail {
+    width: 80px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 15px;
     position: relative;
     overflow: hidden;
 }
 
-.lesson-card::before {
+.video-thumbnail i {
+    z-index: 2;
+}
+
+.video-thumbnail::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    background: linear-gradient(45deg, #28a745, #20c997);
+    bottom: 0;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
 }
 
-.lesson-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+.video-info {
+    flex: 1;
+    margin-right: 15px;
 }
 
-.lesson-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.lesson-title {
-    font-weight: 700;
-    color: #2c3e50;
-    margin: 0;
-    font-size: 1.1rem;
-}
-
-.lesson-badge {
-    background: linear-gradient(45deg, #6c757d, #495057);
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
+.video-title {
     font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+    line-height: 1.3;
 }
 
-.lesson-content {
+.video-description {
     color: #6c757d;
     font-size: 0.9rem;
-    margin-bottom: 15px;
-    line-height: 1.5;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
 }
 
-.lesson-stats {
+.video-stats {
     display: flex;
-    gap: 20px;
-    margin-bottom: 15px;
+    gap: 15px;
+    align-items: center;
 }
 
-.lesson-stat {
+.video-stat {
     display: flex;
     align-items: center;
     color: #6c757d;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
 }
 
-.lesson-stat i {
-    margin-right: 8px;
+.video-stat i {
+    margin-right: 5px;
     color: #28a745;
 }
 
-.lesson-actions {
+.video-actions {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
 }
 
-.lesson-actions .btn {
-    flex: 1;
-    border-radius: 10px;
+.video-status {
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem;
     font-weight: 600;
-    font-size: 0.85rem;
-    padding: 8px 12px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.status-locked {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.status-ready {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.status-completed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-current {
+    background-color: #cce7ff;
+    color: #004085;
+}
+
+.play-button {
+    background: linear-gradient(45deg, #28a745, #20c997);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(40, 167, 69, 0.3);
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+.play-button:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.video-progress {
+    width: 100%;
+    height: 4px;
+    background-color: #e9ecef;
+    border-radius: 2px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.video-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #28a745, #20c997);
+    border-radius: 2px;
+    transition: width 0.3s ease;
 }
 
 .card {
@@ -203,88 +297,134 @@
 </style>
 
 <script>
-// Dersleri yükle
-function loadLessons() {
+// Video dersleri yükle
+function loadVideos() {
     const packageId = @ViewBag.Package.Id;
     const packageName = '@ViewBag.Package.Name';
-    
-    // Temsili ders verileri
-    const lessons = getLessonsByPackage(packageName);
-    renderLessons(lessons);
+
+    // Temsili video verileri
+    const videos = getVideosByPackage(packageName);
+    renderVideos(videos);
 }
 
-function getLessonsByPackage(packageName) {
-    const lessonData = {
+function getVideosByPackage(packageName) {
+    const videoData = {
         'LGS': [
-            { id: 1, title: 'Matematik - Temel Kavramlar', description: 'Sayılar, işlemler ve temel matematik kavramları', duration: '45 dk', videoCount: 3, testCount: 2, status: 'active' },
-            { id: 2, title: 'Türkçe - Dil Bilgisi', description: 'Dil bilgisi kuralları ve uygulamaları', duration: '40 dk', videoCount: 2, testCount: 1, status: 'active' },
-            { id: 3, title: 'Fen Bilimleri - Fizik', description: 'Fizik konuları ve problem çözümleri', duration: '50 dk', videoCount: 4, testCount: 3, status: 'locked' },
-            { id: 4, title: 'Sosyal Bilgiler - Tarih', description: 'Tarih konuları ve önemli olaylar', duration: '35 dk', videoCount: 2, testCount: 2, status: 'locked' }
+            { id: 1, title: 'Giriş ve Temel Kavramlar', description: 'Dersin genel tanıtımı ve temel kavramlar', duration: '15:30', views: 245, status: 'current', progress: 65 },
+            { id: 2, title: 'Sayılar ve İşlemler', description: 'Doğal sayılar, tam sayılar ve temel işlemler', duration: '22:45', views: 189, status: 'ready', progress: 0 },
+            { id: 3, title: 'Kesirler ve Ondalık Sayılar', description: 'Kesir işlemleri ve ondalık sayılarla çalışma', duration: '28:15', views: 167, status: 'ready', progress: 0 },
+            { id: 4, title: 'Oran ve Orantı', description: 'Oran orantı kavramları ve problemler', duration: '25:30', views: 134, status: 'locked', progress: 0 },
+            { id: 5, title: 'Yüzdeler', description: 'Yüzde hesaplamaları ve problemleri', duration: '20:40', views: 98, status: 'locked', progress: 0 },
+            { id: 6, title: 'Geometrik Şekiller', description: 'Temel geometrik şekiller ve özellikleri', duration: '30:20', views: 76, status: 'locked', progress: 0 }
         ],
         'TYT': [
-            { id: 1, title: 'Matematik - Temel Matematik', description: 'TYT matematik konuları ve çözümler', duration: '60 dk', videoCount: 5, testCount: 4, status: 'active' },
-            { id: 2, title: 'Türkçe - Anlam Bilgisi', description: 'Paragraf ve anlam bilgisi konuları', duration: '45 dk', videoCount: 3, testCount: 2, status: 'active' },
-            { id: 3, title: 'Fen Bilimleri - Kimya', description: 'Kimya konuları ve formüller', duration: '55 dk', videoCount: 4, testCount: 3, status: 'locked' },
-            { id: 4, title: 'Sosyal Bilimler - Coğrafya', description: 'Coğrafya konuları ve harita bilgisi', duration: '40 dk', videoCount: 2, testCount: 2, status: 'locked' }
+            { id: 1, title: 'Temel Matematik Giriş', description: 'TYT matematik konularına giriş', duration: '18:45', views: 312, status: 'completed', progress: 100 },
+            { id: 2, title: 'Sayı Sistemleri', description: 'Sayı sistemleri ve dönüşümler', duration: '24:30', views: 287, status: 'current', progress: 45 },
+            { id: 3, title: 'Fonksiyonlar', description: 'Fonksiyon kavramı ve türleri', duration: '32:15', views: 245, status: 'ready', progress: 0 },
+            { id: 4, title: 'Denklemler', description: 'Birinci ve ikinci derece denklemler', duration: '28:50', views: 198, status: 'ready', progress: 0 },
+            { id: 5, title: 'Eşitsizlikler', description: 'Eşitsizlik çözüm yöntemleri', duration: '26:35', views: 167, status: 'locked', progress: 0 },
+            { id: 6, title: 'Logaritma', description: 'Logaritma kavramı ve özellikleri', duration: '29:20', views: 134, status: 'locked', progress: 0 }
         ],
         'AYT': [
-            { id: 1, title: 'Matematik - İleri Matematik', description: 'AYT matematik konuları ve çözümler', duration: '75 dk', videoCount: 6, testCount: 5, status: 'active' },
-            { id: 2, title: 'Fizik - Mekanik', description: 'Fizik mekanik konuları', duration: '65 dk', videoCount: 4, testCount: 3, status: 'active' },
-            { id: 3, title: 'Kimya - Organik Kimya', description: 'Organik kimya konuları', duration: '60 dk', videoCount: 5, testCount: 4, status: 'locked' },
-            { id: 4, title: 'Biyoloji - Hücre Bilimi', description: 'Hücre ve biyoloji konuları', duration: '50 dk', videoCount: 3, testCount: 2, status: 'locked' }
+            { id: 1, title: 'Türev Giriş', description: 'Türev kavramı ve temel kurallar', duration: '25:15', views: 198, status: 'completed', progress: 100 },
+            { id: 2, title: 'Türev Uygulamaları', description: 'Türev uygulamaları ve problemler', duration: '35:40', views: 167, status: 'completed', progress: 100 },
+            { id: 3, title: 'İntegral Giriş', description: 'İntegral kavramı ve hesaplama', duration: '30:25', views: 145, status: 'current', progress: 30 },
+            { id: 4, title: 'Belirli İntegral', description: 'Belirli integral ve uygulamaları', duration: '28:50', views: 123, status: 'ready', progress: 0 },
+            { id: 5, title: 'Limit ve Süreklilik', description: 'Limit kavramı ve süreklilik', duration: '32:10', views: 98, status: 'locked', progress: 0 },
+            { id: 6, title: 'Diziler ve Seriler', description: 'Matematiksel diziler ve seriler', duration: '27:45', views: 76, status: 'locked', progress: 0 }
         ]
     };
-    
-    return lessonData[packageName] || [];
+
+    return videoData[packageName] || [];
 }
 
-function renderLessons(lessons) {
-    const container = document.getElementById('lessonsContainer');
-    let lessonsHtml = '';
-    
-    lessons.forEach(lesson => {
-        const statusClass = lesson.status === 'active' ? 'btn-success' : 'btn-secondary';
-        const statusText = lesson.status === 'active' ? 'Başla' : 'Kilitli';
-        const statusIcon = lesson.status === 'active' ? 'fas fa-play' : 'fas fa-lock';
-        
-        lessonsHtml += `
-            <div class="col-md-6 mb-3">
-                <div class="lesson-card">
-                    <div class="lesson-header">
-                        <h6 class="lesson-title">${lesson.title}</h6>
-                        <span class="lesson-badge">${lesson.duration}</span>
-                    </div>
-                    <div class="lesson-content">
-                        <p>${lesson.description}</p>
-                    </div>
-                    <div class="lesson-stats">
-                        <div class="lesson-stat">
-                            <i class="fas fa-video"></i>
-                            <span>${lesson.videoCount} Video</span>
+function renderVideos(videos) {
+    const container = document.getElementById('videoContainer');
+    let videosHtml = '';
+
+    videos.forEach((video, index) => {
+        const statusConfig = getStatusConfig(video.status);
+        const progressBar = video.progress > 0 ? `
+            <div class="video-progress">
+                <div class="video-progress-bar" style="width: ${video.progress}%"></div>
+            </div>
+        ` : '';
+
+        videosHtml += `
+            <div class="video-item ${video.status}" onclick="${video.status !== 'locked' ? `playVideo(${video.id})` : ''}">
+                <div class="video-thumbnail">
+                    <i class="${statusConfig.icon}"></i>
+                </div>
+                <div class="video-info">
+                    <h6 class="video-title">${index + 1}. ${video.title}</h6>
+                    <p class="video-description">${video.description}</p>
+                    <div class="video-stats">
+                        <div class="video-stat">
+                            <i class="fas fa-clock"></i>
+                            <span>${video.duration}</span>
                         </div>
-                        <div class="lesson-stat">
-                            <i class="fas fa-file-alt"></i>
-                            <span>${lesson.testCount} Test</span>
+                        <div class="video-stat">
+                            <i class="fas fa-eye"></i>
+                            <span>${video.views} izlenme</span>
                         </div>
+                        ${video.progress > 0 ? `
+                            <div class="video-stat">
+                                <i class="fas fa-chart-line"></i>
+                                <span>%${video.progress} tamamlandı</span>
+                            </div>
+                        ` : ''}
                     </div>
-                    <div class="lesson-actions">
-                        <button class="btn ${statusClass} btn-sm" ${lesson.status === 'locked' ? 'disabled' : ''}>
-                            <i class="${statusIcon} me-2"></i>${statusText}
-                        </button>
-                        <button class="btn btn-outline-info btn-sm">
-                            <i class="fas fa-info-circle me-2"></i>Detay
-                        </button>
-                    </div>
+                    ${progressBar}
+                </div>
+                <div class="video-actions">
+                    <span class="video-status ${statusConfig.class}">${statusConfig.text}</span>
+                    <button class="play-button" ${video.status === 'locked' ? 'disabled' : ''}>
+                        <i class="${statusConfig.playIcon}"></i>
+                    </button>
                 </div>
             </div>
         `;
     });
-    
-    container.innerHTML = lessonsHtml;
+
+    container.innerHTML = videosHtml;
+}
+
+function getStatusConfig(status) {
+    const configs = {
+        'locked': {
+            icon: 'fas fa-lock',
+            text: 'Kilitli',
+            class: 'status-locked',
+            playIcon: 'fas fa-lock'
+        },
+        'ready': {
+            icon: 'fas fa-play',
+            text: 'İzle',
+            class: 'status-ready',
+            playIcon: 'fas fa-play'
+        },
+        'current': {
+            icon: 'fas fa-play-circle',
+            text: 'Devam Et',
+            class: 'status-current',
+            playIcon: 'fas fa-play'
+        },
+        'completed': {
+            icon: 'fas fa-check-circle',
+            text: 'Tamamlandı',
+            class: 'status-completed',
+            playIcon: 'fas fa-redo'
+        }
+    };
+    return configs[status] || configs['locked'];
+}
+
+function playVideo(videoId) {
+    alert(`Video ${videoId} oynatılıyor... (Bu fonksiyon daha sonra gerçek video oynatıcısı ile değiştirilecek)`);
 }
 
 // Sayfa yüklendiğinde
 document.addEventListener('DOMContentLoaded', function() {
-    loadLessons();
+    loadVideos();
 });
 </script> 

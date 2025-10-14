@@ -1,3 +1,4 @@
+@model EgitimPlatformu.Models.RegisterViewModel
 @{
     ViewData["Title"] = "Üye Ol";
 }
@@ -43,72 +44,79 @@
                             <div class="register-form-content">
                                 <h2 class="text-center mb-4">Hemen Üye Ol</h2>
                                 
-                                <form class="register-form">
+                                <form class="register-form" asp-controller="Account" asp-action="Register" method="post">
+                                    <div asp-validation-summary="All" class="text-danger"></div>
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
-                                            <label for="firstName" class="form-label">Adınız</label>
+                                            <label asp-for="FirstName" class="form-label">Adınız</label>
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                                <input type="text" class="form-control" id="firstName" placeholder="Adınız" required>
+                                                <input asp-for="FirstName" class="form-control" placeholder="Adınız">
                                             </div>
+                                            <span asp-validation-for="FirstName" class="text-danger"></span>
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label for="lastName" class="form-label">Soyadınız</label>
+                                            <label asp-for="LastName" class="form-label">Soyadınız</label>
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                                <input type="text" class="form-control" id="lastName" placeholder="Soyadınız" required>
+                                                <input asp-for="LastName" class="form-control" placeholder="Soyadınız">
                                             </div>
+                                            <span asp-validation-for="LastName" class="text-danger"></span>
                                         </div>
                                     </div>
                                     
                                     <div class="mb-3">
-                                        <label for="email" class="form-label">E-posta Adresiniz</label>
+                                        <label asp-for="Email" class="form-label">E-posta Adresiniz</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                            <input type="email" class="form-control" id="email" placeholder="ornek@email.com" required>
+                                            <input asp-for="Email" class="form-control" placeholder="ornek@email.com">
                                         </div>
                                         <small class="form-text text-muted">Bu e-posta ile giriş yapacaksınız</small>
+                                        <span asp-validation-for="Email" class="text-danger"></span>
                                     </div>
                                     
                                     <div class="mb-3">
-                                        <label for="phone" class="form-label">Telefon Numaranız (Opsiyonel)</label>
+                                        <label asp-for="PhoneNumber" class="form-label">Telefon Numaranız (Opsiyonel)</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                                            <input type="tel" class="form-control" id="phone" placeholder="(5XX) XXX XX XX">
+                                            <input asp-for="PhoneNumber" class="form-control" placeholder="(5XX) XXX XX XX">
                                         </div>
+                                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                                     </div>
                                     
                                     <div class="mb-3">
-                                        <label for="userType" class="form-label">Üyelik Türü</label>
+                                        <label asp-for="Role" class="form-label">Üyelik Türü</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fas fa-user-graduate"></i></span>
-                                            <select class="form-select" id="userType" required>
+                                            <select asp-for="Role" class="form-select">
                                                 <option value="" selected disabled>Lütfen seçiniz</option>
-                                                <option value="student">Öğrenci</option>
-                                                <option value="parent">Veli</option>
-                                                <option value="teacher">Öğretmen</option>
+                                                <option value="Student">Öğrenci</option>
+                                                <option value="Teacher">Öğretmen</option>
                                             </select>
                                         </div>
+                                        <span asp-validation-for="Role" class="text-danger"></span>
                                     </div>
                                     
                                     <div class="mb-3">
-                                        <label for="password" class="form-label">Şifreniz</label>
+                                        <label asp-for="Password" class="form-label">Şifreniz</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                                            <input type="password" class="form-control" id="password" placeholder="Şifrenizi girin" required>
+                                            <input asp-for="Password" class="form-control" placeholder="Şifrenizi girin">
                                             <button class="btn btn-outline-secondary password-toggle" type="button">
                                                 <i class="fas fa-eye"></i>
                                             </button>
                                         </div>
-                                        <small class="form-text text-muted">En az 8 karakter, bir büyük harf ve bir rakam içermelidir</small>
+                                        <small class="form-text text-muted">En az 6 karakter olmalıdır</small>
+                                        <span asp-validation-for="Password" class="text-danger"></span>
                                     </div>
                                     
                                     <div class="mb-3">
-                                        <label for="confirmPassword" class="form-label">Şifre Tekrarı</label>
+                                        <label asp-for="ConfirmPassword" class="form-label">Şifre Tekrarı</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                                            <input type="password" class="form-control" id="confirmPassword" placeholder="Şifrenizi tekrar girin" required>
+                                            <input asp-for="ConfirmPassword" class="form-control" placeholder="Şifrenizi tekrar girin">
                                         </div>
+                                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                                     </div>
                                     
                                     <div class="mb-3 form-check">
@@ -154,7 +162,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Şifre göster/gizle fonksiyonu
             const togglePassword = document.querySelector('.password-toggle');
-            const password = document.querySelector('#password');
+            const password = document.querySelector('#Password');
             
             togglePassword.addEventListener('click', function() {
                 const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
